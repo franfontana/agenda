@@ -24,4 +24,11 @@ public class Contacto {
 		this.email=email;
 		this.movil=movil;
 	}
+
+//Funcion para seteo de Nombre.
+	public void setNombre(String nomb){
+		this.nombre=nomb.toUpperCase();
+	}
+	
+	
 }
