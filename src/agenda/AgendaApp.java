@@ -2,9 +2,9 @@ package agenda;
 
 public class AgendaApp {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+//Constructor de Contactos.
+	Contacto[] listaDeContactos=new Contacto[99];
+	int contadorDeContactos=0;
+	
 
 }
