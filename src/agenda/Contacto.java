@@ -1,9 +1,9 @@
 package agenda;
 
 public class Contacto {
-	String nombre;
-	String apellido;
-	String email;
-	String movil;
+	private String nombre;
+	private String apellido;
+	private String email;
+	private String movil;
 	
 }
