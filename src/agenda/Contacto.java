@@ -4,10 +4,10 @@ package agenda;
 public class Contacto {
 
 //Declaro variables
-	private String nombre;
-	private String apellido;
-	private String email;
-	private String movil;
+	public static String nombre;
+	public static String apellido;
+	public static String email;
+	public static String movil;
 
 //Funcion para cuando no se ingresa contacto.
 	public Contacto(){

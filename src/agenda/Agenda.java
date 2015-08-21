@@ -1,6 +1,6 @@
 package agenda;
 
-public class AgendaApp {
+public class Agenda {
 
 //Constructor de Contactos.
 	Contacto[] listaDeContactos=new Contacto[99];
