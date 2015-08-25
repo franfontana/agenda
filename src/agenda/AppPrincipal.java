@@ -19,6 +19,8 @@ public class AppPrincipal {
 		//Variables del menu
 		String textAux;
 		int opcion=1;												//Primer ingreso al bucle del menu.
+//		Agenda mi_agenda = new Agenda();
+		
 		
 		while ((opcion<=6) || (opcion==0)){
 			
@@ -44,29 +46,28 @@ public class AppPrincipal {
 			do{
 			Contacto.movil=JOptionPane.showInputDialog("Ingrese el telefono movil del nuevo contacto en formato de diez numeros ej: 11XXXXXXXX");
 			}while(!validarTelMovil(Contacto.movil));
-									
+			
+			System.out.println(Contacto.nombre + "\t" + Contacto.apellido + "\t" + Contacto.email + "\t" + Contacto.movil);
+//			mi_agenda.consultarAgenda(Contacto.nombre, Contacto.apellido, Contacto.email, Contacto.movil);
+			
+
+//			}else{	
+//			JOptionPane.showMessageDialog(null, "Los datos ingresados ya existen en la agenda");
+//			}			
+			
+			
 //			if (validarTelMovil(Contacto.movil)){
 //				System.out.println("El Cel esta ingresado OK");
 //				
 //			}else{
 //				break;
 //			}
-			
-//			if(validarEnAgenda){
-//				
-//			}else{	
-//				JOptionPane.showMessageDialog(null, "Los datos ingresados no son correctos o ya existen en la agenda");
-//			}
 		
 			}
 		}	
 	}
 	
-//	public validarEmail(){
-//		
-//		
-//		
-//	}
+
 	public static boolean validarNombre(String nom1){
 		//boolean nom2=StringToBool(nom1);
 		if(nom1.length()>0){
@@ -110,3 +111,4 @@ public class AppPrincipal {
 	}
 
 }
+

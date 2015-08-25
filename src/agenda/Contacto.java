@@ -30,5 +30,8 @@ public class Contacto {
 		this.nombre=nomb.toUpperCase();
 	}
 	
+	public String getEmail(){
+		return this.email;
+	}
 	
 }
