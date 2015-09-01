@@ -1,28 +1,27 @@
 package agenda;
 
-//import java.util.Scanner;												//Libreria para I/O
-import javax.swing.JOptionPane;											//Libreria para Notificaciones
+import java.util.ArrayList;
+
+
+//import java.util.Scanner;												
+import javax.swing.JOptionPane;											
 //import javax.swing.*;													
 
 public class AppPrincipal {
-
+	
 	public static void main(String[] args) {
 				
 		JOptionPane.showMessageDialog(null, "Agenda Personal");
 		//Scanner teclado=new Scanner(System.in);
-		
-		//Variables de Agenda
-		//String nombre;
-		//String apellido;
-		
-		
-		//Variables del menu
+
 		String textAux;
-		int opcion=1;												//Primer ingreso al bucle del menu.
-//		Agenda mi_agenda = new Agenda();
+		int opcion=1;
+		String nombreIngresado;
+		String apellidoIngresado;
+		String emailIngresado;
+		String movilIngresado;
 		
-		
-		while ((opcion<=6) || (opcion==0)){
+			while ((opcion<=6) || (opcion==0)){
 			
 			textAux=JOptionPane.showInputDialog("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
 			opcion=Integer.parseInt(textAux);							
@@ -31,37 +30,26 @@ public class AppPrincipal {
 			case 1:
 			
 			do{
-			Contacto.nombre=JOptionPane.showInputDialog("Ingrese el nombre del nuevo contacto");
-			System.out.println(Contacto.nombre);
-			}while(!validarNombre(Contacto.nombre));
+			nombreIngresado=JOptionPane.showInputDialog("Ingrese el nombre del nuevo contacto");
+			}while(!validarNombre(nombreIngresado));
 			
 			do{
-			Contacto.apellido=JOptionPane.showInputDialog("Ingrese el apellido del nuevo contacto");
-			}while(!validarApellido(Contacto.apellido));
+			apellidoIngresado=JOptionPane.showInputDialog("Ingrese el apellido del nuevo contacto");
+			}while(!validarApellido(apellidoIngresado));
 			
 			do{
-			Contacto.email=JOptionPane.showInputDialog("Ingrese el email del nuevo contacto");
-			}while(!validarEmail(Contacto.email));
+			emailIngresado=JOptionPane.showInputDialog("Ingrese el email del nuevo contacto");
+			}while(!validarEmail(emailIngresado));
 			
 			do{
-			Contacto.movil=JOptionPane.showInputDialog("Ingrese el telefono movil del nuevo contacto en formato de diez numeros ej: 11XXXXXXXX");
-			}while(!validarTelMovil(Contacto.movil));
+			movilIngresado=JOptionPane.showInputDialog("Ingrese el telefono movil del nuevo contacto en formato de diez numeros ej: 11XXXXXXXX");
+			}while(!validarTelMovil(movilIngresado));
+		
+			Agenda contactoIngresado=new Agenda();
+			contactoIngresado.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
+			System.out.println("Contacto Ingresado:\n"+nombreIngresado+"\t"+apellidoIngresado+"\t"+emailIngresado+"\t"+movilIngresado);
 			
-			System.out.println(Contacto.nombre + "\t" + Contacto.apellido + "\t" + Contacto.email + "\t" + Contacto.movil);
-//			mi_agenda.consultarAgenda(Contacto.nombre, Contacto.apellido, Contacto.email, Contacto.movil);
-			
-
-//			}else{	
-//			JOptionPane.showMessageDialog(null, "Los datos ingresados ya existen en la agenda");
-//			}			
-			
-			
-//			if (validarTelMovil(Contacto.movil)){
-//				System.out.println("El Cel esta ingresado OK");
-//				
-//			}else{
-//				break;
-//			}
+			break;
 		
 			}
 		}	
@@ -69,7 +57,6 @@ public class AppPrincipal {
 	
 
 	public static boolean validarNombre(String nom1){
-		//boolean nom2=StringToBool(nom1);
 		if(nom1.length()>0){
 			return true;
 		}else{
@@ -109,6 +96,5 @@ public class AppPrincipal {
 			return false;
 		}
 	}
-
 }
 

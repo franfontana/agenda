@@ -1,10 +1,36 @@
 package agenda;
 
+import java.util.ArrayList;
+
 public class Agenda {
 
 //Constructor de Contactos.
-	Contacto[] listaDeContactos=new Contacto[99];
+	ArrayList<Contacto> listaDeContactos= new ArrayList<Contacto>();
 	
+	public Agenda() {
+
+	}
+
+	public Agenda(ArrayList<Contacto> lista) {
+		this.listaDeContactos = lista;
+	}
+
+	public boolean agregarContacto(String nombre, String apellido, String email, String movil){
+		Contacto unContacto = new Contacto(nombre, apellido, email, movil);
+		this.listaDeContactos.add(unContacto);
+		return true;
+	}
+	
+	public boolean eliminarContacto(String nombre, String apellido, String email, String movil){
+		Contacto unContacto = new Contacto(nombre, apellido, email, movil);
+		this.listaDeContactos.remove(unContacto);
+		return true;
+	}
+
+	public boolean contactoEnAgenda(String email1){
+		boolean retval=this.listaDeContactos.contains(email1);
+		return retval;
+	}
 
 //	public int consultarAgenda(String nom1, String ape1, String email1, String mov1){
 //		int contadorDeContactos=0;

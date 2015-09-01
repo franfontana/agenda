@@ -3,21 +3,15 @@ package agenda;
 
 public class Contacto {
 
-//Declaro variables
-	public static String nombre;
-	public static String apellido;
-	public static String email;
-	public static String movil;
+	private String nombre, apellido, email, movil;
 
-//Funcion para cuando no se ingresa contacto.
 	public Contacto(){
-		this.nombre=null;
-		this.apellido=null;
-		this.email=null;
-		this.movil=null;
+		nombre="";
+		apellido="";
+		email="";
+		movil="";
 	}
 	
-//Funcion para ingreso de cualquier contacto.
 	public Contacto(String nombre, String apellido, String email, String movil){
 		this.nombre=nombre;
 		this.apellido=apellido;
@@ -25,7 +19,6 @@ public class Contacto {
 		this.movil=movil;
 	}
 
-//Funcion para seteo de Nombre.
 	public void setNombre(String nomb){
 		this.nombre=nomb.toUpperCase();
 	}
@@ -33,5 +26,29 @@ public class Contacto {
 	public String getEmail(){
 		return this.email;
 	}
-	
+
+		public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getMovil() {
+		return movil;
+	}
+
+	public void setMovil(String movil) {
+		this.movil = movil;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 }
