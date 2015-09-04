@@ -23,8 +23,8 @@ public class Agenda {
 	
 	public boolean eliminarContacto(String nombre, String apellido, String email, String movil){
 		Contacto unContacto = new Contacto(nombre, apellido, email, movil);
-		this.listaDeContactos.remove(unContacto);
-		return true;
+				this.listaDeContactos.remove(unContacto);
+				return true;
 	}
 
 	public boolean contactoEnAgenda(String email1){
