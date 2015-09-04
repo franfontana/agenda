@@ -42,19 +42,18 @@ public class SearchTestCase {
 		System.out.println("Encuentra contacto existente");
 	}
 	
-//	@Test	FALTA IMPLEMENTAR METODO DE BUSQUEDA
-//	public void testBusquedaContactoInexistente(){
-//		
-//		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
-//		Agenda agenda = new Agenda(miLista);
-//		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
-//		Contacto contacto = miLista.get(0);
-//		assertNotSame("v", contacto.getNombre());
-//		assertNotSame("x", contacto.getApellido());
-//		assertNotSame("y", contacto.getEmail());
-//		assertNotSame("z", contacto.getMovil());
-//		System.out.println("No encuentra contacto inexistente");
-//	}
+	@Test
+	public void testBusquedaContactoInexistente(){
+		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
+		Agenda agenda = new Agenda(miLista);
+		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
+		Contacto contactoEncontrado = agenda.buscarContacto("e", "f", "g", "h");
+		assertNull(contactoEncontrado);
+		assertNull(contactoEncontrado);
+		assertNull(contactoEncontrado);
+		assertNull(contactoEncontrado);
+		System.out.println("No encuentra contacto inexistente");
+	}
 	
 //	@Test	//NO FUNCIONA
 //	public void testBusquedaContactoValido() {
