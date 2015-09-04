@@ -28,19 +28,20 @@ public class SearchTestCase {
 		System.out.println("Elimina un contacto generado y corrobora en lista");
 	}
 	
-//	@Test	FALTA IMPLEMENTAR METODO DE BUSQUEDA
-//	public void testBusquedaContactoExistente(){
-//		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
-//		Agenda agenda = new Agenda(miLista);
-//		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
-//		Contacto contacto = miLista.get(0);
-//		assertEquals("a", contacto.getNombre());
-//		assertEquals("b", contacto.getApellido());
-//		assertEquals("c", contacto.getEmail());
-//		assertEquals("d", contacto.getMovil());
-//		System.out.println("Encuentra contacto existente");
-//	}
-//	
+	@Test
+	public void testBusquedaContactoExistente(){
+		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
+		Agenda agenda = new Agenda(miLista);
+		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
+		Contacto contacto = miLista.get(0);
+		Contacto contactoEncontrado = agenda.buscarContacto("a", "b", "c", "d");		
+		assertEquals(contactoEncontrado.getNombre(), contacto.getNombre());
+		assertEquals(contactoEncontrado.getApellido(), contacto.getApellido());
+		assertEquals(contactoEncontrado.getEmail(), contacto.getEmail());
+		assertEquals(contactoEncontrado.getMovil(), contacto.getMovil());
+		System.out.println("Encuentra contacto existente");
+	}
+	
 //	@Test	FALTA IMPLEMENTAR METODO DE BUSQUEDA
 //	public void testBusquedaContactoInexistente(){
 //		

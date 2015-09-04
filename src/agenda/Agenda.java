@@ -23,14 +23,27 @@ public class Agenda {
 	
 	public boolean eliminarContacto(String nombre, String apellido, String email, String movil){
 		Contacto unContacto = new Contacto(nombre, apellido, email, movil);
-				this.listaDeContactos.remove(unContacto);
-				return true;
+		this.listaDeContactos.remove(unContacto);
+		return true;
+	}
+	
+	public Contacto buscarContacto(String nombre, String apellido, String email, String movil){
+		Contacto retorno;
+		Contacto unContacto = new Contacto(nombre, apellido, email, movil);
+		if(this.listaDeContactos.contains(unContacto)){
+			retorno = unContacto;
+		}else{
+			retorno = null;
+		}		
+		return retorno;
 	}
 
-	public boolean contactoEnAgenda(String email1){
-		boolean retval=this.listaDeContactos.contains(email1);
-		return retval;
-	}
+//	public boolean contactoEnAgenda(String email1){
+//		boolean retval=this.listaDeContactos.contains(email1);
+//		return retval;
+//	}
+
+
 
 //	public int consultarAgenda(String nom1, String ape1, String email1, String mov1){
 //		int contadorDeContactos=0;
