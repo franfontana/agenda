@@ -55,38 +55,16 @@ public class SearchTestCase {
 		System.out.println("No encuentra contacto inexistente");
 	}
 	
-//	@Test	//NO FUNCIONA
-//	public void testBusquedaContactoValido() {
-//		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
-//		Agenda agenda = new Agenda(miLista);
-//		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
-//		Contacto contacto = miLista.get(0);
-////		System.out.println(contacto.getEmail());
-////		assertEquals(true, agenda.contactoEnAgenda(contacto.getEmail()));
-//		boolean resultadoFuncion = agenda.contactoEnAgenda(contacto.getEmail());
-//		System.out.println(resultadoFuncion);
-//		System.out.println("Encuentra contacto con Email");
-//	}
-	
-//	@Test	NO FUNCIONA
-//	public void testBusquedaContactoInvalido(){
-//		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
-//		Agenda agenda = new Agenda(miLista);
-//		assertTrue(agenda.agregarContacto("a", "b", "", "d"));
-//		assert(agenda.contactoEnAgenda("") | false);
-//		System.out.println("Encuentra contacto sin Email");
-//	}
-	
-//	@Test	MAL IMPLEMENTADO
-//	public void testContactoDuplicado(){
-//		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
-//		Agenda agenda = new Agenda(miLista);
-//		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
-//		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
-//		Contacto contacto1 = miLista.get(0);
-//		Contacto contacto2 = miLista.get(1);
-//		assertEquals(contacto1.getEmail(), contacto2.getEmail());
-//		System.out.println("Contacto Duplicado");
-//	}
+	@Test
+	public void testNoPermiteContactoDuplicado(){
+		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
+		Agenda agenda = new Agenda(miLista);		
+		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
+		Contacto contacto1 = miLista.get(0);
+		Contacto contactoEncontrado1 = agenda.buscarContacto("a", "b", "c", "d");
+		assertEquals(contacto1, contactoEncontrado1);		
+		assertFalse(agenda.agregarContacto("a", "b", "c", "d"));		
+		System.out.println("No se permite agregar contacto duplicado");
+	}
 
 }
