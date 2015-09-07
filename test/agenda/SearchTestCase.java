@@ -49,9 +49,6 @@ public class SearchTestCase {
 		assertTrue(agenda.agregarContacto("a", "b", "c", "d"));
 		Contacto contactoEncontrado = agenda.buscarContacto("e", "f", "g", "h");
 		assertNull(contactoEncontrado);
-		assertNull(contactoEncontrado);
-		assertNull(contactoEncontrado);
-		assertNull(contactoEncontrado);
 		System.out.println("No encuentra contacto inexistente");
 	}
 	
