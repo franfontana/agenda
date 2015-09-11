@@ -1,58 +1,70 @@
 package agenda;
 
 import java.util.ArrayList;
-
-
-//import java.util.Scanner;												
-import javax.swing.JOptionPane;											
+import java.util.Scanner;																						
 //import javax.swing.*;													
 
 public class AppPrincipal {
 	
 	public static void main(String[] args) {
 				
-		JOptionPane.showMessageDialog(null, "Agenda Personal");
-		//Scanner teclado=new Scanner(System.in);
+		System.out.println("AGENDA PERSONAL\n");
+		Scanner teclado=new Scanner(System.in);
+		Scanner waitForKeypress = new Scanner(System.in);
 
-		String textAux;
 		int opcion=1;
-		String nombreIngresado;
-		String apellidoIngresado;
-		String emailIngresado;
-		String movilIngresado;
+		String nombreIngresado = new String();
+		String apellidoIngresado = new String();
+		String emailIngresado = new String();
+		String movilIngresado = new String();
+		String atributoBuscado = new String();
+		ArrayList<Contacto> miListaPrincipal = new ArrayList<Contacto>();
+		Agenda agendaPrincipal = new Agenda(miListaPrincipal);
 		
 			while ((opcion<=6) || (opcion==0)){
 			
-			textAux=JOptionPane.showInputDialog("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
-			opcion=Integer.parseInt(textAux);							
+			System.out.println("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
+			opcion = teclado.nextInt();							
 		
 			switch (opcion){
 			case 1:
 			
-			do{
-			nombreIngresado=JOptionPane.showInputDialog("Ingrese el nombre del nuevo contacto");
-			}while(!validarNombre(nombreIngresado));
+				do{
+					System.out.print("Ingrese el nombre del nuevo contacto:");
+					nombreIngresado = teclado.next();
+				}while(!validarNombre(nombreIngresado));
+				
+				do{
+					System.out.print("Ingrese el apellido del nuevo contacto:");
+					apellidoIngresado = teclado.next();
+				}while(!validarApellido(apellidoIngresado));
+				
+				do{
+					System.out.print("Ingrese el email del nuevo contacto:");
+					emailIngresado = teclado.next();
+				}while(!validarEmail(emailIngresado));
+				
+				do{
+					System.out.print("Ingrese el telefono movil del nuevo contacto en formato de diez numeros ej: 11XXXXXXXX:");
+					movilIngresado = teclado.next();
+				}while(!validarTelMovil(movilIngresado));
 			
-			do{
-			apellidoIngresado=JOptionPane.showInputDialog("Ingrese el apellido del nuevo contacto");
-			}while(!validarApellido(apellidoIngresado));
+				agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
+				System.out.println("\nPresione una tecla para continuar.");
+				waitForKeypress.nextLine();
+				break;
 			
-			do{
-			emailIngresado=JOptionPane.showInputDialog("Ingrese el email del nuevo contacto");
-			}while(!validarEmail(emailIngresado));
-			
-			do{
-			movilIngresado=JOptionPane.showInputDialog("Ingrese el telefono movil del nuevo contacto en formato de diez numeros ej: 11XXXXXXXX");
-			}while(!validarTelMovil(movilIngresado));
-		
-			Agenda contactoIngresado=new Agenda();
-			contactoIngresado.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
-			System.out.println("Contacto Ingresado:\n"+nombreIngresado+"\t"+apellidoIngresado+"\t"+emailIngresado+"\t"+movilIngresado);
-			
-			break;
-		
+			case 2:
+				
+				System.out.print("\nIngrese cualquier atributo del contacto a buscar:");
+				atributoBuscado = teclado.next();
+				agendaPrincipal.buscarContacto(atributoBuscado);
+				System.out.println("\nPresione una tecla para continuar.");
+				waitForKeypress.nextLine();
+				break;
 			}
-		}	
+		}
+
 	}
 	
 

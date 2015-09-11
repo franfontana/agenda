@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Agenda {
 
-//Constructor de Contactos.
 	ArrayList<Contacto> listaDeContactos= new ArrayList<Contacto>();
+	int index;
 	
 	public Agenda() {
 
@@ -17,10 +17,11 @@ public class Agenda {
 
 	public boolean agregarContacto(String nombre, String apellido, String email, String movil){
 		boolean retorno;
-		Contacto contactoEncontrado = buscarContacto(nombre, apellido, email, movil);
-		if(contactoEncontrado == null){
+		ArrayList<Contacto> contactosEncontrados = buscarContacto(email);
+		if(contactosEncontrados.size() == 0){
 			Contacto unContacto1 = new Contacto(nombre, apellido, email, movil);
 			this.listaDeContactos.add(unContacto1);
+			System.out.println("\nContacto ingresado correctamente:\n" + "Nombre:" + unContacto1.getNombre() + "\t" + "Apellido:" + unContacto1.getApellido() + "\t" + "Email:" + unContacto1.getEmail() + "\t" + "Movil:" + unContacto1.getMovil() + "\n");
 			retorno = true;
 		}else{
 			retorno = false;
@@ -34,34 +35,51 @@ public class Agenda {
 		return true;
 	}
 	
-	public Contacto buscarContacto(String nombre, String apellido, String email, String movil){
-		Contacto retorno;
-		Contacto unContacto3 = new Contacto(nombre, apellido, email, movil);
-		if(this.listaDeContactos.contains(unContacto3)){
-			retorno = unContacto3;
-		}else{
-			retorno = null;
+	public ArrayList<Contacto> buscarContacto(String busqueda){
+		ArrayList<Contacto> auxList = new ArrayList<Contacto>();
+		String mostrarBusqueda = "";
+		for(Contacto c : listaDeContactos) {
+			if(c.getNombre().equals(busqueda)) {
+				mostrarBusqueda += "Nombre:" + c.getNombre();
+				mostrarBusqueda += "\tApellido:" + c.getApellido();
+				mostrarBusqueda += "\tEmail:" + c.getEmail();
+				mostrarBusqueda += "\tMovil:" + c.getMovil()  + "\n";
+				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
+				auxList.add(unContacto3);
+			}
+			if(c.getApellido().equals(busqueda)) {
+				mostrarBusqueda += "Nombre:" + c.getNombre();
+				mostrarBusqueda += "\tApellido:" + c.getApellido();
+				mostrarBusqueda += "\tEmail:" + c.getEmail();
+				mostrarBusqueda += "\tMovil:" + c.getMovil()  + "\n";
+				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
+				auxList.add(unContacto3);
+			}
+			if(c.getEmail().equals(busqueda)) {
+				mostrarBusqueda += "Nombre:" + c.getNombre();
+				mostrarBusqueda += "\tApellido:" + c.getApellido();
+				mostrarBusqueda += "\tEmail:" + c.getEmail();
+				mostrarBusqueda += "\tMovil:" + c.getMovil() + "\n";
+				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
+				auxList.add(unContacto3);
+			}
+			if(c.getMovil().equals(busqueda)) {
+				mostrarBusqueda += "Nombre:" + c.getNombre();
+				mostrarBusqueda += "\tApellido:" + c.getApellido();
+				mostrarBusqueda += "\tEmail:" + c.getEmail();
+				mostrarBusqueda += "\tMovil:" + c.getMovil() + "\n";
+				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
+				auxList.add(unContacto3);	
+			}
 		}		
-		return retorno;
+		if(auxList.size() != 0){
+			System.out.println("\nContactos Encontrados:");
+			System.out.println(mostrarBusqueda);
+		}
+		if(auxList.size() == 0){
+			System.out.println("No existe contacto con dicho atributo.");
+		}
+		return auxList;
 	}
-
-//	public boolean contactoEnAgenda(String email1){
-//		boolean retval=this.listaDeContactos.contains(email1);
-//		return retval;
-//	}
-
-
-
-//	public int consultarAgenda(String nom1, String ape1, String email1, String mov1){
-//		int contadorDeContactos=0;
-//		for(int i=0; i<=contadorDeContactos; i++){
-//			if(email1.equals(listaDeContactos[i].getEmail())){
-//				System.out.println("El contacto ya existe en la agenda");
-//				return 1;
-//			}else{
-//				contadorDeContactos++;
-//				return 0;
-//			}
-//		}		
-//	}
+	
 }
