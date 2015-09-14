@@ -82,4 +82,18 @@ public class Agenda {
 		return auxList;
 	}
 	
+	public boolean modificarContacto(String nombre, String apellido, String email, String movil, String nuevoNombre, String nuevoApellido, String nuevoEmail, String nuevoMovil) {
+		boolean retorno = false;
+		for(Contacto c : listaDeContactos){
+			if(c.getNombre().equals(nombre) && c.getApellido().equals(apellido) && c.getEmail().equals(email) && c.getMovil().equals(movil)){	
+				eliminarContacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
+				agregarContacto(nuevoNombre, nuevoApellido, nuevoEmail, nuevoMovil);
+				retorno = true;
+			}else{
+				retorno = false;
+			}
+		}
+		return retorno;
+	}
+	
 }
