@@ -119,8 +119,7 @@ public class SearchTestCase {
 		String nombreTest = new String(name);
 		String apellidoTest = new String(lastname);
 		String emailTest = new String(email);
-		String movilTest = new String(phone);
-		
+		String movilTest = new String(phone);		
 		String newname = UUID.randomUUID().toString();
 		String newlastname = UUID.randomUUID().toString();
 		String newemail = UUID.randomUUID().toString();
@@ -130,12 +129,7 @@ public class SearchTestCase {
 		String nuevoEmailTest = new String(newemail);
 		String nuevoMovilTest = new String(newmovil);
 		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
-//		Contacto contacto2 = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
-//		ArrayList<Contacto> contactosEncontrados2 = agenda.buscarContacto(email);
 		assertTrue(agenda.modificarContacto(nombreTest, apellidoTest, emailTest, movilTest, nuevoNombreTest, nuevoApellidoTest, nuevoEmailTest, nuevoMovilTest));
-//		Contacto contacto3 = new Contacto(nuevoNombreTest, nuevoApellidoTest, nuevoEmailTest, nuevoMovilTest);
-//		assertNotEquals(contacto2.getNombre(), contacto3.getNombre());
-//		contactosEncontrados2.get(0).getNombre();
 		System.out.println("Modifica los atributos del contacto");
 	}
 
