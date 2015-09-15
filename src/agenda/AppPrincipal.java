@@ -119,7 +119,7 @@ public class AppPrincipal {
 						
 					case 3:	
 						do{
-							System.out.print("Ingrese el nuevo email del contacto");
+							System.out.print("Ingrese el nuevo email del contacto:");
 							nuevoEmailIngresado = teclado.next();
 						}while(!validarEmail(nuevoEmailIngresado));
 						agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, apellidoIngresado, nuevoEmailIngresado, movilIngresado);
@@ -136,10 +136,24 @@ public class AppPrincipal {
 					case 0:
 						opcionModificar = 6;
 						break;
-					}
-			
+					}			
 				}
 
+				break;
+				
+			case 4:
+				
+				do{
+					System.out.print("Ingrese el email del contacto a eliminar:");
+					emailIngresado = teclado.next();
+				}while(!validarEmail(emailIngresado));
+				nombreIngresado = "";
+				apellidoIngresado = "";
+				movilIngresado = "";
+				
+				agendaPrincipal.eliminarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
+				System.out.println("\nEl contacto se ha eliminado de la agenda.\n");
+				
 				break;
 			}
 		}
