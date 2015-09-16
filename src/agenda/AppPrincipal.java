@@ -24,6 +24,7 @@ public class AppPrincipal {
 		String nuevoEmailIngresado = new String();
 		String nuevoMovilIngresado = new String();
 		ArrayList<Contacto> miListaPrincipal = new ArrayList<Contacto>();
+		ArrayList<Contacto> miListaDeBusqueda = new ArrayList<Contacto>();
 		Agenda agendaPrincipal = new Agenda(miListaPrincipal);
 		
 			while ((opcion<=6) || (opcion==0)){
@@ -56,7 +57,7 @@ public class AppPrincipal {
 				}while(!validarTelMovil(movilIngresado));
 			
 				agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
-				System.out.println("\nPresione una tecla para continuar.");
+				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
 			
@@ -64,8 +65,11 @@ public class AppPrincipal {
 				
 				System.out.print("\nIngrese cualquier atributo del contacto a buscar:");
 				atributoBuscado = teclado.next();
-				agendaPrincipal.buscarContacto(atributoBuscado);
-				System.out.println("\nPresione una tecla para continuar.");
+				miListaDeBusqueda = agendaPrincipal.buscarContacto(atributoBuscado);
+				if(miListaDeBusqueda.size() == 0 ){
+					System.out.println("No existe contacto con dicho atributo.");
+				}
+				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
 				
@@ -96,8 +100,8 @@ public class AppPrincipal {
 				
 				while ((opcionModificar<=5) || (opcionModificar==0)){
 				
-					System.out.println("Indique que atributo desea modificar del contacto:");
-					System.out.println("\n1..Nombre\n2..Apellido\n3..Email\n4..Movil\n0..Volver al Menu Principal");
+					System.out.println("\nIndique que atributo desea modificar del contacto:");
+					System.out.println("1..Nombre\n2..Apellido\n3..Email\n4..Movil\n0..Volver al Menu Principal");
 					opcionModificar = teclado.nextInt();
 								
 					switch(opcionModificar){
@@ -106,7 +110,14 @@ public class AppPrincipal {
 							System.out.print("Ingrese el nuevo nombre del contacto:");
 							nuevoNombreIngresado = teclado.next();
 						}while(!validarNombre(nuevoNombreIngresado));
-						agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nuevoNombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
+						if(agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nuevoNombreIngresado, apellidoIngresado, emailIngresado, movilIngresado)) {
+							nombreIngresado = nuevoNombreIngresado;
+							System.out.println("Se ha modificado el contacto.");
+							System.out.println("\nPresione enter para continuar.");
+							waitForKeypress.nextLine();
+						}
+						System.out.println("\nPresione enter para continuar.");
+						waitForKeypress.nextLine();
 						break;
 						
 					case 2:
@@ -114,7 +125,14 @@ public class AppPrincipal {
 							System.out.print("Ingrese el nuevo apellido del contacto:");
 							nuevoApellidoIngresado = teclado.next();
 						}while(!validarApellido(nuevoApellidoIngresado));
-						agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, nuevoApellidoIngresado, emailIngresado, movilIngresado);
+						if(agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, nuevoApellidoIngresado, emailIngresado, movilIngresado)){
+							apellidoIngresado = nuevoApellidoIngresado;
+							System.out.println("Se ha modificado el contacto.");
+							System.out.println("\nPresione enter para continuar.");
+							waitForKeypress.nextLine();
+						}
+						System.out.println("\nPresione enter para continuar.");
+						waitForKeypress.nextLine();
 						break;
 						
 					case 3:	
@@ -122,7 +140,14 @@ public class AppPrincipal {
 							System.out.print("Ingrese el nuevo email del contacto:");
 							nuevoEmailIngresado = teclado.next();
 						}while(!validarEmail(nuevoEmailIngresado));
-						agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, apellidoIngresado, nuevoEmailIngresado, movilIngresado);
+						if(agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, apellidoIngresado, nuevoEmailIngresado, movilIngresado)) {
+							emailIngresado = nuevoEmailIngresado;
+							System.out.println("Se ha modificado el contacto.");
+							System.out.println("\nPresione enter para continuar.");
+							waitForKeypress.nextLine();
+						}
+						System.out.println("\nPresione enter para continuar.");
+						waitForKeypress.nextLine();
 						break;
 						
 					case 4:
@@ -130,7 +155,14 @@ public class AppPrincipal {
 							System.out.print("Ingrese el nuevo telefono movil del contacto en formato de diez numeros ej: 11XXXXXXXX:");
 							nuevoMovilIngresado = teclado.next();
 						}while(!validarTelMovil(nuevoMovilIngresado));
-						agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, apellidoIngresado, emailIngresado, nuevoMovilIngresado);
+						if(agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, apellidoIngresado, emailIngresado, nuevoMovilIngresado)) {
+							movilIngresado = nuevoMovilIngresado;
+							System.out.println("Se ha modificado el contacto.");
+							System.out.println("\nPresione enter para continuar.");
+							waitForKeypress.nextLine();
+						}
+						System.out.println("\nPresione enter para continuar.");
+						waitForKeypress.nextLine();
 						break;
 					
 					case 0:
@@ -152,8 +184,10 @@ public class AppPrincipal {
 				movilIngresado = "";
 				
 				agendaPrincipal.eliminarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
-				System.out.println("\nEl contacto se ha eliminado de la agenda.\n");
+				System.out.println("\nEl contacto se ha eliminado de la agenda.");
 				
+				System.out.println("\nPresione enter para continuar.");
+				waitForKeypress.nextLine();
 				break;
 			}
 		}

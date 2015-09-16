@@ -24,6 +24,8 @@ public class Agenda {
 			System.out.println("\nContacto ingresado correctamente:\n" + "Nombre:" + unContacto1.getNombre() + "\t" + "Apellido:" + unContacto1.getApellido() + "\t" + "Email:" + unContacto1.getEmail() + "\t" + "Movil:" + unContacto1.getMovil() + "\n");
 			retorno = true;
 		}else{
+			System.out.println("NO se ha insertado el contacto en la agenda.");
+			System.out.println("El contacto encontrado en la agenda es el que contiene el email a insertar y no es posible duplicarlo.");
 			retorno = false;
 		}
 		return retorno;
@@ -76,22 +78,21 @@ public class Agenda {
 			System.out.println("\nContactos Encontrados:");
 			System.out.println(mostrarBusqueda);
 		}
-		if(auxList.size() == 0){
-			System.out.println("No existe contacto con dicho atributo.");
-		}
 		return auxList;
 	}
 	
 	public boolean modificarContacto(String nombre, String apellido, String email, String movil, String nuevoNombre, String nuevoApellido, String nuevoEmail, String nuevoMovil) {
+		ArrayList<Contacto> auxList2 = new ArrayList<Contacto>();
 		boolean retorno = false;
-		for(Contacto c : listaDeContactos){
-			if(c.getNombre().equals(nombre) && c.getApellido().equals(apellido) && c.getEmail().equals(email) && c.getMovil().equals(movil)){	
-				eliminarContacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				agregarContacto(nuevoNombre, nuevoApellido, nuevoEmail, nuevoMovil);
-				retorno = true;
+		auxList2 = buscarContacto(nuevoEmail);
+			if(auxList2.size() == 0 || nuevoEmail == email){
+				eliminarContacto(nombre, apellido, email, movil);
 			}else{
 				retorno = false;
-			}
+			}			
+		retorno = agregarContacto(nuevoNombre, nuevoApellido, nuevoEmail, nuevoMovil);
+		if(retorno == false){
+			System.out.println("\nNo se ha modificado el contacto.");
 		}
 		return retorno;
 	}
