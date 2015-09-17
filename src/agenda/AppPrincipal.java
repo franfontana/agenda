@@ -189,9 +189,17 @@ public class AppPrincipal {
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
-			}
+				
+			case 5:
+				
+				if(!agendaPrincipal.mostrarTodosLosContactos()){
+					System.out.println("No existen contactos en la agenda.");
+				}
+				System.out.println("\nPresione enter para continuar.");
+				waitForKeypress.nextLine();
+				break;
+			}						
 		}
-
 	}
 	
 
