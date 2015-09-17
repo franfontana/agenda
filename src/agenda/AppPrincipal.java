@@ -214,6 +214,12 @@ public class AppPrincipal {
 					waitForKeypress.nextLine();
 				}				
 				break;
+				
+			case 0:
+				
+				System.out.println("Ha salido de la Agenda.");
+				opcion = 100;
+				break;
 			}						
 		}
 	}
