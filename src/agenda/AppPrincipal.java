@@ -13,7 +13,8 @@ public class AppPrincipal {
 		Scanner waitForKeypress = new Scanner(System.in);
 
 		int opcion=1;
-		int opcionModificar = 1;
+		int opcionModificar = 1;	
+		String opcionEliminarTodo = "N";
 		String nombreIngresado = new String();
 		String apellidoIngresado = new String();
 		String emailIngresado = new String();
@@ -197,6 +198,21 @@ public class AppPrincipal {
 				}
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
+				break;
+				
+			case 6:
+								
+				System.out.print("Esta seguro de que desea eliminar TODOS los contactos de la agenda (S/N):");
+				opcionEliminarTodo = teclado.next();
+				System.out.print("\n");
+				if(opcionEliminarTodo.equals("S")){
+					if(!agendaPrincipal.eliminarTodosLosContactos()){
+						System.out.println("No existen contactos en la agenda a eliminar.");
+					}
+					opcionEliminarTodo = "N";
+					System.out.println("\nPresione enter para continuar.");
+					waitForKeypress.nextLine();
+				}				
 				break;
 			}						
 		}
