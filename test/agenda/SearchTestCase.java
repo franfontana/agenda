@@ -149,5 +149,24 @@ public class SearchTestCase {
 		assertTrue(agenda.mostrarTodosLosContactos());
 		System.out.println("Muestra todos los contactos");
 	}
+	
+	@Test
+	public void testEliminarTodosLosContactos(){
+		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
+		Agenda agenda = new Agenda(miLista);
+		String name = UUID.randomUUID().toString();
+		String lastname = UUID.randomUUID().toString();
+		String email = UUID.randomUUID().toString();
+		String phone = UUID.randomUUID().toString();
+		String nombreTest = new String(name);
+		String apellidoTest = new String(lastname);
+		String emailTest = new String(email);
+		String movilTest = new String(phone);
+		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
+		assertEquals(1, miLista.size());
+		assertTrue(agenda.eliminarTodosLosContactos());
+		assertEquals(0, miLista.size());
+		System.out.println("Elimina todos los contactos");
+	}
 
 }

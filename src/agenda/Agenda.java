@@ -110,4 +110,16 @@ public class Agenda {
 		return retorno;
 	}
 	
+	public boolean eliminarTodosLosContactos(){
+		boolean retorno;
+		if(listaDeContactos.size() > 0){
+			retorno = true;
+			listaDeContactos.removeAll(listaDeContactos);
+			System.out.println("Todos los contactos han sido eliminados.");
+		}else{
+			retorno = false;
+		}
+		return retorno;
+	}
+	
 }
