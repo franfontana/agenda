@@ -114,8 +114,6 @@ public class AppPrincipal {
 						if(agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nuevoNombreIngresado, apellidoIngresado, emailIngresado, movilIngresado)) {
 							nombreIngresado = nuevoNombreIngresado;
 							System.out.println("Se ha modificado el contacto.");
-							System.out.println("\nPresione enter para continuar.");
-							waitForKeypress.nextLine();
 						}
 						System.out.println("\nPresione enter para continuar.");
 						waitForKeypress.nextLine();
@@ -129,8 +127,6 @@ public class AppPrincipal {
 						if(agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, nuevoApellidoIngresado, emailIngresado, movilIngresado)){
 							apellidoIngresado = nuevoApellidoIngresado;
 							System.out.println("Se ha modificado el contacto.");
-							System.out.println("\nPresione enter para continuar.");
-							waitForKeypress.nextLine();
 						}
 						System.out.println("\nPresione enter para continuar.");
 						waitForKeypress.nextLine();
@@ -144,8 +140,6 @@ public class AppPrincipal {
 						if(agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, apellidoIngresado, nuevoEmailIngresado, movilIngresado)) {
 							emailIngresado = nuevoEmailIngresado;
 							System.out.println("Se ha modificado el contacto.");
-							System.out.println("\nPresione enter para continuar.");
-							waitForKeypress.nextLine();
 						}
 						System.out.println("\nPresione enter para continuar.");
 						waitForKeypress.nextLine();
@@ -159,8 +153,6 @@ public class AppPrincipal {
 						if(agendaPrincipal.modificarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado, nombreIngresado, apellidoIngresado, emailIngresado, nuevoMovilIngresado)) {
 							movilIngresado = nuevoMovilIngresado;
 							System.out.println("Se ha modificado el contacto.");
-							System.out.println("\nPresione enter para continuar.");
-							waitForKeypress.nextLine();
 						}
 						System.out.println("\nPresione enter para continuar.");
 						waitForKeypress.nextLine();
