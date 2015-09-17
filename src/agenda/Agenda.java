@@ -97,4 +97,18 @@ public class Agenda {
 		return retorno;
 	}
 	
+	public boolean mostrarTodosLosContactos(){
+		boolean retorno;
+		if(listaDeContactos.size() > 0){
+			retorno = true;
+			System.out.println("Nombre:\tApellido:\tEmail:\tMovil:\n\n");
+			for(Contacto c : listaDeContactos){				
+				System.out.println(c.getNombre() + "\t" + c.getApellido() + "\t" + c.getEmail() + "\t" + c.getMovil());
+			}
+		}else{
+			retorno  = false;
+		}
+		return retorno;
+	}
+	
 }

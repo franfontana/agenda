@@ -132,5 +132,22 @@ public class SearchTestCase {
 		assertTrue(agenda.modificarContacto(nombreTest, apellidoTest, emailTest, movilTest, nuevoNombreTest, nuevoApellidoTest, nuevoEmailTest, nuevoMovilTest));
 		System.out.println("Modifica los atributos del contacto");
 	}
+	
+	@Test
+	public void testMostrarTodosLosContactos(){
+		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
+		Agenda agenda = new Agenda(miLista);
+		String name = UUID.randomUUID().toString();
+		String lastname = UUID.randomUUID().toString();
+		String email = UUID.randomUUID().toString();
+		String phone = UUID.randomUUID().toString();
+		String nombreTest = new String(name);
+		String apellidoTest = new String(lastname);
+		String emailTest = new String(email);
+		String movilTest = new String(phone);		
+		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
+		assertTrue(agenda.mostrarTodosLosContactos());
+		System.out.println("Muestra todos los contactos");
+	}
 
 }
