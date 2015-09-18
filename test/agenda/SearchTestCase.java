@@ -62,18 +62,16 @@ public class SearchTestCase {
 	public void testBusquedaContactoInexistente(){
 		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
 		Agenda agenda = new Agenda(miLista);
-		String name = UUID.randomUUID().toString();
-		String lastname = UUID.randomUUID().toString();
-		String email = UUID.randomUUID().toString();
-		String phone = UUID.randomUUID().toString();
-		String nombreTest = new String(name);
-		String apellidoTest = new String(lastname);
-		String emailTest = new String(email);
-		String movilTest = new String(phone);
-		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
+		String nombreTest = UUID.randomUUID().toString();
+		String apellidoTest = UUID.randomUUID().toString();
+		String emailTest = UUID.randomUUID().toString();
+		String movilTest = UUID.randomUUID().toString();
 		String atributoTest = UUID.randomUUID().toString();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		miLista.add(contacto);
+		assertEquals(1, miLista.size());		
 		ArrayList<Contacto> contactosEncontrados = agenda.buscarContacto(atributoTest);
-		assertTrue(contactosEncontrados.size() == 0);
+		assertEquals(0, contactosEncontrados.size());
 		System.out.println("No encuentra contacto inexistente");
 	}
 	
