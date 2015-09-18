@@ -21,7 +21,7 @@ public class AppPrincipal {
 		ArrayList<Contacto> miListaPrincipal = new ArrayList<Contacto>();
 		Agenda agendaPrincipal = new Agenda(miListaPrincipal);
 		
-			while ((opcion<=6) || (opcion==0)){
+			while (opcion<=6){
 			
 			System.out.println("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
 			opcion = teclado.nextInt();							
