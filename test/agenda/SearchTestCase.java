@@ -13,14 +13,10 @@ public class SearchTestCase {
 	public void testAltaDeContacto(){
 		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
 		Agenda agenda = new Agenda(miLista);
-		String name = UUID.randomUUID().toString();
-		String lastname = UUID.randomUUID().toString();
-		String email = UUID.randomUUID().toString();
-		String phone = UUID.randomUUID().toString();
-		String nombreTest = new String(name);
-		String apellidoTest = new String(lastname);
-		String emailTest = new String(email);
-		String movilTest = new String(phone);
+		String nombreTest = UUID.randomUUID().toString();
+		String apellidoTest = UUID.randomUUID().toString();
+		String emailTest = UUID.randomUUID().toString();
+		String movilTest = UUID.randomUUID().toString();
 		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
 		assertEquals(1, miLista.size());
 		System.out.println("Guarda un nuevo contacto y corrobora en lista");
