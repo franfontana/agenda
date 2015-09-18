@@ -10,7 +10,6 @@ public class AppPrincipal {
 				
 		System.out.println("AGENDA PERSONAL\n");
 		Scanner teclado=new Scanner(System.in);
-		Scanner waitForKeypress = new Scanner(System.in);
 
 		int opcion=1;
 		String nombreIngresado = new String();
@@ -51,7 +50,7 @@ public class AppPrincipal {
 			
 				agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
 				System.out.println("\nPresione una tecla para continuar.");
-				waitForKeypress.nextLine();
+				teclado.nextLine();
 				break;
 			
 			case 2:
@@ -60,7 +59,7 @@ public class AppPrincipal {
 				atributoBuscado = teclado.next();
 				agendaPrincipal.buscarContacto(atributoBuscado);
 				System.out.println("\nPresione una tecla para continuar.");
-				waitForKeypress.nextLine();
+				teclado.nextLine();
 				break;
 			}
 		}
