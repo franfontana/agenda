@@ -79,23 +79,14 @@ public class SearchTestCase {
 	public void testNoPermiteContactoDuplicado(){
 		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
 		Agenda agenda = new Agenda(miLista);		
-		String name = UUID.randomUUID().toString();
-		String lastname = UUID.randomUUID().toString();
-		String email = UUID.randomUUID().toString();
-		String phone = UUID.randomUUID().toString();
-		String nombreTest = new String(name);
-		String apellidoTest = new String(lastname);
-		String emailTest = new String(email);
-		String movilTest = new String(phone);
-		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
-		Contacto contacto1 = miLista.get(0);
-		ArrayList<Contacto> contactosEncontrados1 = agenda.buscarContacto(email);
-		assertEquals(1, contactosEncontrados1.size());			
-		assertEquals(contactosEncontrados1.get(0).getNombre(), contacto1.getNombre());
-		assertEquals(contactosEncontrados1.get(0).getApellido(), contacto1.getApellido());
-		assertEquals(contactosEncontrados1.get(0).getEmail(), contacto1.getEmail());
-		assertEquals(contactosEncontrados1.get(0).getMovil(), contacto1.getMovil());	
-		assertFalse(agenda.agregarContacto(name, lastname, email, phone));		
+		String nombreTest = UUID.randomUUID().toString();
+		String apellidoTest = UUID.randomUUID().toString();
+		String emailTest = UUID.randomUUID().toString();
+		String movilTest = UUID.randomUUID().toString();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		miLista.add(contacto);
+		assertEquals(1, miLista.size());
+		assertFalse(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));			
 		System.out.println("No se permite agregar contacto duplicado");
 	}
 
