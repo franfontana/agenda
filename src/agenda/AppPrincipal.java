@@ -10,7 +10,6 @@ public class AppPrincipal {
 				
 		System.out.println("AGENDA PERSONAL\n");
 		Scanner teclado=new Scanner(System.in);
-		Scanner waitForKeypress = new Scanner(System.in);
 
 		int opcion=1;
 		int opcionModificar = 1;	
@@ -28,7 +27,7 @@ public class AppPrincipal {
 		ArrayList<Contacto> miListaDeBusqueda = new ArrayList<Contacto>();
 		Agenda agendaPrincipal = new Agenda(miListaPrincipal);
 		
-			while ((opcion<=6) || (opcion==0)){
+			while (opcion<=6){
 			
 			System.out.println("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
 			opcion = teclado.nextInt();	
@@ -59,7 +58,7 @@ public class AppPrincipal {
 			
 				agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
 				System.out.println("\nPresione enter para continuar.");
-				waitForKeypress.nextLine();
+				teclado.nextLine();
 				break;
 			
 			case 2:
@@ -71,7 +70,7 @@ public class AppPrincipal {
 					System.out.println("No existe contacto con dicho atributo.");
 				}
 				System.out.println("\nPresione enter para continuar.");
-				waitForKeypress.nextLine();
+				teclado.nextLine();
 				break;
 				
 			case 3:

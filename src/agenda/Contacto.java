@@ -56,9 +56,7 @@ public class Contacto {
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
         final Contacto other = (Contacto) obj;
-        boolean sameA = (this.email == other.email) || (this.email != null && this.email.equalsIgnoreCase(other.email));
-        if (!sameA) return false;
-        return true;
+        return (this.email == other.email) || (this.email != null && this.email.equalsIgnoreCase(other.email));
     }
 
 }
