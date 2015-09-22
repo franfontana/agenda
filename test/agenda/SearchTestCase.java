@@ -94,23 +94,17 @@ public class SearchTestCase {
 	public void testModificaAtributosDeContacto(){
 		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
 		Agenda agenda = new Agenda(miLista);
-		String name = UUID.randomUUID().toString();
-		String lastname = UUID.randomUUID().toString();
-		String email = UUID.randomUUID().toString();
-		String phone = UUID.randomUUID().toString();
-		String nombreTest = new String(name);
-		String apellidoTest = new String(lastname);
-		String emailTest = new String(email);
-		String movilTest = new String(phone);		
-		String newname = UUID.randomUUID().toString();
-		String newlastname = UUID.randomUUID().toString();
-		String newemail = UUID.randomUUID().toString();
-		String newmovil = UUID.randomUUID().toString();
-		String nuevoNombreTest = new String(newname);
-		String nuevoApellidoTest = new String(newlastname);
-		String nuevoEmailTest = new String(newemail);
-		String nuevoMovilTest = new String(newmovil);
-		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
+		String nombreTest = UUID.randomUUID().toString();
+		String apellidoTest = UUID.randomUUID().toString();
+		String emailTest = UUID.randomUUID().toString();
+		String movilTest = UUID.randomUUID().toString();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		miLista.add(contacto);
+		assertEquals(1, miLista.size());
+		String nuevoNombreTest = UUID.randomUUID().toString();
+		String nuevoApellidoTest = UUID.randomUUID().toString();
+		String nuevoEmailTest = UUID.randomUUID().toString();
+		String nuevoMovilTest = UUID.randomUUID().toString();
 		assertTrue(agenda.modificarContacto(nombreTest, apellidoTest, emailTest, movilTest, nuevoNombreTest, nuevoApellidoTest, nuevoEmailTest, nuevoMovilTest));
 		System.out.println("Modifica los atributos del contacto");
 	}
@@ -119,15 +113,13 @@ public class SearchTestCase {
 	public void testMostrarTodosLosContactos(){
 		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
 		Agenda agenda = new Agenda(miLista);
-		String name = UUID.randomUUID().toString();
-		String lastname = UUID.randomUUID().toString();
-		String email = UUID.randomUUID().toString();
-		String phone = UUID.randomUUID().toString();
-		String nombreTest = new String(name);
-		String apellidoTest = new String(lastname);
-		String emailTest = new String(email);
-		String movilTest = new String(phone);		
-		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
+		String nombreTest = UUID.randomUUID().toString();
+		String apellidoTest = UUID.randomUUID().toString();
+		String emailTest = UUID.randomUUID().toString();
+		String movilTest = UUID.randomUUID().toString();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		miLista.add(contacto);
+		assertEquals(1, miLista.size());
 		assertTrue(agenda.mostrarTodosLosContactos());
 		System.out.println("Muestra todos los contactos");
 	}
@@ -136,15 +128,12 @@ public class SearchTestCase {
 	public void testEliminarTodosLosContactos(){
 		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
 		Agenda agenda = new Agenda(miLista);
-		String name = UUID.randomUUID().toString();
-		String lastname = UUID.randomUUID().toString();
-		String email = UUID.randomUUID().toString();
-		String phone = UUID.randomUUID().toString();
-		String nombreTest = new String(name);
-		String apellidoTest = new String(lastname);
-		String emailTest = new String(email);
-		String movilTest = new String(phone);
-		assertTrue(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));
+		String nombreTest = UUID.randomUUID().toString();
+		String apellidoTest = UUID.randomUUID().toString();
+		String emailTest = UUID.randomUUID().toString();
+		String movilTest = UUID.randomUUID().toString();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		miLista.add(contacto);
 		assertEquals(1, miLista.size());
 		assertTrue(agenda.eliminarTodosLosContactos());
 		assertEquals(0, miLista.size());
