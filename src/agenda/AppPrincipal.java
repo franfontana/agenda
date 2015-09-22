@@ -98,7 +98,7 @@ public class AppPrincipal {
 				}while(!validarTelMovil(movilIngresado));
 				
 				
-				while ((opcionModificar<=5) || (opcionModificar==0)){
+				while (opcionModificar<=5){
 				
 					System.out.println("\nIndique que atributo desea modificar del contacto:");
 					System.out.println("1..Nombre\n2..Apellido\n3..Email\n4..Movil\n0..Volver al Menu Principal");
