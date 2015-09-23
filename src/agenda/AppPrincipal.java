@@ -113,7 +113,7 @@ public class AppPrincipal {
 							System.out.println("Se ha modificado el contacto.");
 						}
 						System.out.println("\nPresione enter para continuar.");
-						teclado.nextLine();
+						waitForKeypress.nextLine();
 						break;
 						
 					case 2:
@@ -126,7 +126,7 @@ public class AppPrincipal {
 							System.out.println("Se ha modificado el contacto.");
 						}
 						System.out.println("\nPresione enter para continuar.");
-						teclado.nextLine();
+						waitForKeypress.nextLine();
 						break;
 						
 					case 3:	
@@ -139,7 +139,7 @@ public class AppPrincipal {
 							System.out.println("Se ha modificado el contacto.");
 						}
 						System.out.println("\nPresione enter para continuar.");
-						teclado.nextLine();
+						waitForKeypress.nextLine();
 						break;
 						
 					case 4:
@@ -152,7 +152,7 @@ public class AppPrincipal {
 							System.out.println("Se ha modificado el contacto.");
 						}
 						System.out.println("\nPresione enter para continuar.");
-						teclado.nextLine();
+						waitForKeypress.nextLine();
 						break;
 					
 					case 0:
@@ -177,7 +177,7 @@ public class AppPrincipal {
 				System.out.println("\nEl contacto se ha eliminado de la agenda.");
 				
 				System.out.println("\nPresione enter para continuar.");
-				teclado.nextLine();
+				waitForKeypress.nextLine();
 				break;
 				
 			case 5:
@@ -186,7 +186,7 @@ public class AppPrincipal {
 					System.out.println("No existen contactos en la agenda.");
 				}
 				System.out.println("\nPresione enter para continuar.");
-				teclado.nextLine();
+				waitForKeypress.nextLine();
 				break;
 				
 			case 6:
@@ -200,7 +200,7 @@ public class AppPrincipal {
 					}
 					opcionEliminarTodo = "N";
 					System.out.println("\nPresione enter para continuar.");
-					teclado.nextLine();
+					waitForKeypress.nextLine();
 				}				
 				break;
 				
