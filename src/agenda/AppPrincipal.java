@@ -66,15 +66,16 @@ public class AppPrincipal {
 				
 				System.out.print("\nIngrese cualquier atributo del contacto a buscar:");
 				atributoBuscado = teclado.next();
-				agendaPrincipal.buscarContacto(atributoBuscado);
+				miListaDeBusqueda = agendaPrincipal.buscarContacto(atributoBuscado);
+				if(miListaDeBusqueda.size() == 0 ){
+					System.out.println("No existe contacto con dicho atributo.");
+				}
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
 				
 			case 3:
-				
-				
-				
+								
 				do{
 					System.out.print("Ingrese el nombre del contacto a modificar:");
 					nombreIngresado = teclado.next();
