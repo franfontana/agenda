@@ -79,21 +79,49 @@ public class AppPrincipal {
 					System.out.print("Ingrese el nombre del contacto a modificar:");
 					nombreIngresado = teclado.next();
 				}while(!validarNombre(nombreIngresado));
+				miListaDeBusqueda = agendaPrincipal.buscarContacto(nombreIngresado);
+				if(miListaDeBusqueda.size() == 0){
+					System.out.println("No existe contacto con dicho atributo.");
+					System.out.println("\nPresione enter para continuar.");
+					waitForKeypress.nextLine();
+					break;
+				}
 				
 				do{
 					System.out.print("Ingrese el apellido del contacto a modificar:");
 					apellidoIngresado = teclado.next();
 				}while(!validarApellido(apellidoIngresado));
+				miListaDeBusqueda = agendaPrincipal.buscarContacto(apellidoIngresado);
+				if(miListaDeBusqueda.size() == 0){
+					System.out.println("No existe contacto con dicho atributo.");
+					System.out.println("\nPresione enter para continuar.");
+					waitForKeypress.nextLine();
+					break;
+				}
 				
 				do{
 					System.out.print("Ingrese el email del contacto a modificar:");
 					emailIngresado = teclado.next();
 				}while(!validarEmail(emailIngresado));
+				miListaDeBusqueda = agendaPrincipal.buscarContacto(emailIngresado);
+				if(miListaDeBusqueda.size() == 0){
+					System.out.println("No existe contacto con dicho atributo.");
+					System.out.println("\nPresione enter para continuar.");
+					waitForKeypress.nextLine();
+					break;
+				}
 				
 				do{
 					System.out.print("Ingrese el telefono movil del contacto a modificar en formato de diez numeros ej: 11XXXXXXXX:");
 					movilIngresado = teclado.next();
 				}while(!validarTelMovil(movilIngresado));
+				miListaDeBusqueda = agendaPrincipal.buscarContacto(movilIngresado);
+				if(miListaDeBusqueda.size() == 0){
+					System.out.println("No existe contacto con dicho atributo.");
+					System.out.println("\nPresione enter para continuar.");
+					waitForKeypress.nextLine();
+					break;
+				}
 				
 				while (opcionModificar<=5){
 				
