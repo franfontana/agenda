@@ -171,8 +171,11 @@ public class AppPrincipal {
 				nombreIngresado = "";
 				apellidoIngresado = "";
 				movilIngresado = "";				
-				agendaPrincipal.eliminarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
-				System.out.println("\nEl contacto se ha eliminado de la agenda.");				
+				if(agendaPrincipal.eliminarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado)){
+					System.out.println("\nEl contacto se ha eliminado de la agenda.");
+				}else{
+					System.out.println("No se encuentra el contacto a eliminar.");
+				}								
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
