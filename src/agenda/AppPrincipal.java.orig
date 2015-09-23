@@ -9,7 +9,8 @@ public class AppPrincipal {
 	public static void main(String[] args) {
 				
 		System.out.println("AGENDA PERSONAL\n");
-		Scanner teclado=new Scanner(System.in);
+		Scanner teclado = new Scanner(System.in);
+		Scanner waitForKeypress = new Scanner(System.in);
 
 		int opcion=1;
 		int opcionModificar = 1;	
@@ -59,11 +60,11 @@ public class AppPrincipal {
 				agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
 <<<<<<< HEAD
 				System.out.println("\nPresione enter para continuar.");
-				waitForKeypress.nextLine();
+				teclado.nextLine();
 =======
 				System.out.println("\nPresione una tecla para continuar.");
-				teclado.nextLine();
->>>>>>> 3048f3c349e84177fc5e15af4c8ffd04fc992bb3
+				waitForKeypress.nextLine();
+>>>>>>> 7b025677ab2bdc03e7efd4bf2e17743c29f99956
 				break;
 			
 			case 2:
@@ -76,12 +77,12 @@ public class AppPrincipal {
 					System.out.println("No existe contacto con dicho atributo.");
 				}
 				System.out.println("\nPresione enter para continuar.");
-				waitForKeypress.nextLine();
+				teclado.nextLine();
 =======
 				agendaPrincipal.buscarContacto(atributoBuscado);
 				System.out.println("\nPresione una tecla para continuar.");
-				teclado.nextLine();
->>>>>>> 3048f3c349e84177fc5e15af4c8ffd04fc992bb3
+				waitForKeypress.nextLine();
+>>>>>>> 7b025677ab2bdc03e7efd4bf2e17743c29f99956
 				break;
 				
 			case 3:
@@ -109,7 +110,7 @@ public class AppPrincipal {
 				}while(!validarTelMovil(movilIngresado));
 				
 				
-				while ((opcionModificar<=5) || (opcionModificar==0)){
+				while (opcionModificar<=5){
 				
 					System.out.println("\nIndique que atributo desea modificar del contacto:");
 					System.out.println("1..Nombre\n2..Apellido\n3..Email\n4..Movil\n0..Volver al Menu Principal");
@@ -126,7 +127,7 @@ public class AppPrincipal {
 							System.out.println("Se ha modificado el contacto.");
 						}
 						System.out.println("\nPresione enter para continuar.");
-						waitForKeypress.nextLine();
+						teclado.nextLine();
 						break;
 						
 					case 2:
@@ -139,7 +140,7 @@ public class AppPrincipal {
 							System.out.println("Se ha modificado el contacto.");
 						}
 						System.out.println("\nPresione enter para continuar.");
-						waitForKeypress.nextLine();
+						teclado.nextLine();
 						break;
 						
 					case 3:	
@@ -152,7 +153,7 @@ public class AppPrincipal {
 							System.out.println("Se ha modificado el contacto.");
 						}
 						System.out.println("\nPresione enter para continuar.");
-						waitForKeypress.nextLine();
+						teclado.nextLine();
 						break;
 						
 					case 4:
@@ -165,7 +166,7 @@ public class AppPrincipal {
 							System.out.println("Se ha modificado el contacto.");
 						}
 						System.out.println("\nPresione enter para continuar.");
-						waitForKeypress.nextLine();
+						teclado.nextLine();
 						break;
 					
 					case 0:
@@ -190,7 +191,7 @@ public class AppPrincipal {
 				System.out.println("\nEl contacto se ha eliminado de la agenda.");
 				
 				System.out.println("\nPresione enter para continuar.");
-				waitForKeypress.nextLine();
+				teclado.nextLine();
 				break;
 				
 			case 5:
@@ -199,7 +200,7 @@ public class AppPrincipal {
 					System.out.println("No existen contactos en la agenda.");
 				}
 				System.out.println("\nPresione enter para continuar.");
-				waitForKeypress.nextLine();
+				teclado.nextLine();
 				break;
 				
 			case 6:
@@ -213,7 +214,7 @@ public class AppPrincipal {
 					}
 					opcionEliminarTodo = "N";
 					System.out.println("\nPresione enter para continuar.");
-					waitForKeypress.nextLine();
+					teclado.nextLine();
 				}				
 				break;
 				

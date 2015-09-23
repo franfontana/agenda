@@ -9,7 +9,8 @@ public class AppPrincipal {
 	public static void main(String[] args) {
 				
 		System.out.println("AGENDA PERSONAL\n");
-		Scanner teclado=new Scanner(System.in);
+		Scanner teclado = new Scanner(System.in);
+		Scanner waitForKeypress = new Scanner(System.in);
 
 		int opcion=1;
 		int opcionModificar = 1;	
@@ -58,19 +59,16 @@ public class AppPrincipal {
 			
 				agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
 				System.out.println("\nPresione enter para continuar.");
-				teclado.nextLine();
+				waitForKeypress.nextLine();
 				break;
 			
 			case 2:
 				
 				System.out.print("\nIngrese cualquier atributo del contacto a buscar:");
 				atributoBuscado = teclado.next();
-				miListaDeBusqueda = agendaPrincipal.buscarContacto(atributoBuscado);
-				if(miListaDeBusqueda.size() == 0 ){
-					System.out.println("No existe contacto con dicho atributo.");
-				}
+				agendaPrincipal.buscarContacto(atributoBuscado);
 				System.out.println("\nPresione enter para continuar.");
-				teclado.nextLine();
+				waitForKeypress.nextLine();
 				break;
 				
 			case 3:
