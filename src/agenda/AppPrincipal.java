@@ -1,8 +1,7 @@
 package agenda;
 
 import java.util.ArrayList;
-import java.util.Scanner;																						
-//import javax.swing.*;													
+import java.util.Scanner;																																			
 
 public class AppPrincipal {
 	
@@ -36,7 +35,7 @@ public class AppPrincipal {
 		
 			switch (opcion){
 			case 1:
-			
+
 				do{
 					System.out.print("Ingrese el nombre del nuevo contacto:");
 					nombreIngresado = teclado.next();
@@ -67,7 +66,7 @@ public class AppPrincipal {
 				System.out.print("\nIngrese cualquier atributo del contacto a buscar:");
 				atributoBuscado = teclado.next();
 				miListaDeBusqueda = agendaPrincipal.buscarContacto(atributoBuscado);
-				if(miListaDeBusqueda.size() == 0 ){
+				if(miListaDeBusqueda.size() == 0){
 					System.out.println("No existe contacto con dicho atributo.");
 				}
 				System.out.println("\nPresione enter para continuar.");
@@ -95,7 +94,6 @@ public class AppPrincipal {
 					System.out.print("Ingrese el telefono movil del contacto a modificar en formato de diez numeros ej: 11XXXXXXXX:");
 					movilIngresado = teclado.next();
 				}while(!validarTelMovil(movilIngresado));
-				
 				
 				while (opcionModificar<=5){
 				
@@ -172,11 +170,9 @@ public class AppPrincipal {
 				}while(!validarEmail(emailIngresado));
 				nombreIngresado = "";
 				apellidoIngresado = "";
-				movilIngresado = "";
-				
+				movilIngresado = "";				
 				agendaPrincipal.eliminarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
-				System.out.println("\nEl contacto se ha eliminado de la agenda.");
-				
+				System.out.println("\nEl contacto se ha eliminado de la agenda.");				
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
@@ -214,15 +210,13 @@ public class AppPrincipal {
 		}
 	}
 	
-
 	public static boolean validarNombre(String nom1){
 		if(nom1.length()>0){
 			return true;
 		}else{
 			return false;
 		}
-	}
-	
+	}	
 	public static boolean validarApellido(String ape1){
 		if(ape1.length()>0){
 			return true;
@@ -230,7 +224,6 @@ public class AppPrincipal {
 			return false;
 		}
 	}
-
 	public static boolean validarEmail(String email1){
 		int arroba=0;
 		for (int posicionCaracter=0; posicionCaracter<email1.length(); posicionCaracter++){
@@ -246,8 +239,7 @@ public class AppPrincipal {
 		}else{
 			return false;
 		}
-	}
-	
+	}	
 	public static boolean validarTelMovil(String mov1){
 		if(mov1.length()==10){
 			return true;
