@@ -45,5 +45,23 @@ public class SearchTestCase {
 		assertEquals(0, contactosEncontrados.size());
 		System.out.println("No encuentra contacto inexistente");
 	}
+<<<<<<< HEAD
+	
+	@Test
+	public void testNoPermiteContactoDuplicado(){
+		ArrayList<Contacto> miLista = new ArrayList<Contacto>();
+		Agenda agenda = new Agenda(miLista);		
+		String nombreTest = UUID.randomUUID().toString();
+		String apellidoTest = UUID.randomUUID().toString();
+		String emailTest = UUID.randomUUID().toString();
+		String movilTest = UUID.randomUUID().toString();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		miLista.add(contacto);
+		assertEquals(1, miLista.size());
+		assertFalse(agenda.agregarContacto(nombreTest, apellidoTest, emailTest, movilTest));			
+		System.out.println("No se permite agregar contacto duplicado");
+	}
+=======
+>>>>>>> bac9bf9... Se reorganizan los test agregando identificaciones(clases) de los diferentes casos para cada accion a realizar en la agenda
 
 }
