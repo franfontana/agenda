@@ -27,11 +27,7 @@ public class Agenda {
 	
 	public boolean eliminarContacto(String email){
 		boolean retorno;
-		ArrayList<Contacto> contactosEncontrados = buscarContacto(email);
-		if(contactosEncontrados.size() == 1){
-			Contacto unContacto2 = new Contacto(nombre, apellido, email, movil);
-			if(this.listaDeContactos.remove(unContacto2)) retorno = true; else retorno = false;
-		}else retorno = false;
+		if(this.listaDeContactos.remove(buscarUnContacto(email))) retorno = true; else retorno = false;
 		return retorno;
 	}
 	
