@@ -25,15 +25,22 @@ public class Agenda {
 		return retorno;
 	}
 	
-	public boolean eliminarContacto(String nombre, String apellido, String email, String movil){
+	public boolean eliminarContacto(String email){
 		boolean retorno;
-		Contacto unContacto2 = new Contacto(nombre, apellido, email, movil);
-		if(this.listaDeContactos.remove(unContacto2)){
-			retorno = true;
-		}else{
-			retorno = false;
-		}
+		ArrayList<Contacto> contactosEncontrados = buscarContacto(email);
+		if(contactosEncontrados.size() == 1){
+			Contacto unContacto2 = new Contacto(nombre, apellido, email, movil);
+			if(this.listaDeContactos.remove(unContacto2)) retorno = true; else retorno = false;
+		}else retorno = false;
 		return retorno;
+	}
+	
+	public Contacto buscarUnContacto(String email){
+		Contacto contactoEncontrado = null;
+		for(Contacto c : listaDeContactos){
+			if(c.getEmail().equals(email)) contactoEncontrado = c; else contactoEncontrado = null;
+		}
+		return contactoEncontrado;
 	}
 	
 	public ArrayList<Contacto> buscarContacto(String busqueda){
