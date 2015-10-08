@@ -17,8 +17,7 @@ public class Agenda {
 
 	public boolean agregarContacto(String nombre, String apellido, String email, String movil){
 		boolean retorno;
-		ArrayList<Contacto> contactosEncontrados = buscarContacto(email);
-		if(contactosEncontrados.size() == 0){
+		if(buscarUnContacto(email) == null){
 			Contacto unContacto1 = new Contacto(nombre, apellido, email, movil);
 			if(this.listaDeContactos.add(unContacto1)) retorno = true; else retorno = false;				
 		}else retorno = false;		
