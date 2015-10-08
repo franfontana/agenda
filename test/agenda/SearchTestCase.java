@@ -143,8 +143,7 @@ public class SearchTestCase {
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
 		assertEquals(1, miLista.size());		
-		ArrayList<Contacto> contactosEncontrados = agenda.buscarContacto(atributoTest);
-		assertEquals(0, contactosEncontrados.size());
+		assertEquals(null, agenda.buscarUnContacto(atributoTest));
 		System.out.println("No encuentra contacto inexistente");
 	}
 	
