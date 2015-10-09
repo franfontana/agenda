@@ -117,13 +117,13 @@ public class Agenda {
 	
 	public boolean mostrarTodosLosContactos(){
 		boolean retorno;
-		if(listaDeContactos.size() > 0){
-			retorno = true;			
+		if(listaDeContactos.size() > 0){			
 			for(Contacto c : listaDeContactos){
 				System.out.println("Nombre:" + c.getNombre() + "\t" + "Apellido:" + c.getApellido() + "\t" + "Email:" + c.getEmail() + "\t" + "Movil:" + c.getMovil());
 			}
+			retorno = true;
 		}else{
-			retorno  = false;
+			retorno = false;
 		}
 		return retorno;
 	}
