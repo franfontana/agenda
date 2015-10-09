@@ -83,29 +83,35 @@ public class Agenda {
 	}
 	
 	public boolean modificarContacto(String emailDeContactoAModificar, String atributoAModificar, String nuevoValorDeAtributo) {
-		boolean retorno;
+		boolean retorno = false;
+		int opcion = 0;
+		if(atributoAModificar.equals("Nombre")) opcion = 1;
+		if(atributoAModificar.equals("Apellido")) opcion = 2;
+		if(atributoAModificar.equals("Email")) opcion = 3;
+		if(atributoAModificar.equals("Movil")) opcion = 4;
 		Contacto contactoAModificar = buscarUnContacto(emailDeContactoAModificar);
-		if(contactoAModificar != null || nuevoValorDeAtributo.equals(emailDeContactoAModificar)){
-			eliminarContacto(emailDeContactoAModificar);
+		if(contactoAModificar != null){
+			switch(opcion){
+			case 1:
+				contactoAModificar.setNombre(nuevoValorDeAtributo);
+				retorno = true;
+				break;
+			case 2:
+				contactoAModificar.setApellido(nuevoValorDeAtributo);
+				retorno = true;
+				break;
+			case 3:
+				contactoAModificar.setEmail(nuevoValorDeAtributo);
+				retorno = true;
+				break;
+			case 4:
+				contactoAModificar.setMovil(nuevoValorDeAtributo);
+				retorno = true;
+				break;
+			}
 		}else{
 			retorno = false;
 		}
-		retorno = agregarContacto(contactoAModificar.getNombre(), contactoAModificar.getApellido(), contactoAModificar.getEmail(), contactoAModificar.getMovil());
-		if(retorno == false){
-			System.out.println("\nNo se ha modificado el contacto.");
-		}
-//		ArrayList<Contacto> auxList2 = new ArrayList<Contacto>();
-//		boolean retorno = false;
-//		auxList2 = buscarContacto(nuevoEmail);
-//		if(auxList2.size() == 0 || nuevoEmail == email){
-//			eliminarContacto(email);
-//		}else{
-//			retorno = false;
-//		}			
-//		retorno = agregarContacto(nuevoNombre, nuevoApellido, nuevoEmail, nuevoMovil);
-//		if(retorno == false){
-//			System.out.println("\nNo se ha modificado el contacto.");
-//		}
 		return retorno;
 	}
 	

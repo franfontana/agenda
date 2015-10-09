@@ -42,7 +42,7 @@ public class ModifyContactTestCase {
 		String emailDeContactoAModificar = UUID.randomUUID().toString();
 		String atributoAModificar = UUID.randomUUID().toString();
 		String nuevoValorDeAtributo = UUID.randomUUID().toString();
-		assertTrue(agenda.modificarContacto(emailDeContactoAModificar, atributoAModificar, nuevoValorDeAtributo));
+		assertFalse(agenda.modificarContacto(emailDeContactoAModificar, atributoAModificar, nuevoValorDeAtributo));
 		System.out.println("No Modifica contacto inexistente");
 	}
 
