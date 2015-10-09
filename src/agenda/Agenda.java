@@ -131,9 +131,8 @@ public class Agenda {
 	public boolean eliminarTodosLosContactos(){
 		boolean retorno;
 		if(listaDeContactos.size() > 0){
-			retorno = true;
 			listaDeContactos.removeAll(listaDeContactos);
-			System.out.println("Todos los contactos han sido eliminados.");
+			retorno = true;
 		}else{
 			retorno = false;
 		}
