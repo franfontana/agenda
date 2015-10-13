@@ -19,10 +19,6 @@ public class AppPrincipal {
 		String emailIngresado = new String();
 		String movilIngresado = new String();
 		String atributoBuscado = new String();
-		String nuevoNombreIngresado = new String();
-		String nuevoApellidoIngresado = new String();
-		String nuevoEmailIngresado = new String();
-		String nuevoMovilIngresado = new String();
 		ArrayList<Contacto> miListaPrincipal = new ArrayList<Contacto>();
 		ArrayList<Contacto> miListaDeBusqueda = new ArrayList<Contacto>();
 		Agenda agendaPrincipal = new Agenda(miListaPrincipal);
@@ -56,7 +52,10 @@ public class AppPrincipal {
 					movilIngresado = teclado.next();
 				}while(!validarTelMovil(movilIngresado));
 			
-				agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado);
+				if(agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado)){
+					System.out.println("\nContacto ingresado correctamente:\n" + "Nombre:" + nombreIngresado + "\t" + "Apellido:" + apellidoIngresado + "\t" + "Email:" + emailIngresado + "\t" + "Movil:" + movilIngresado);
+				}else System.out.println("NO se ha insertado el contacto en la agenda.\nEl contacto existe en la agenda y no es posible duplicarlo.");
+				
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
