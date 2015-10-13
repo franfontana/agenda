@@ -34,7 +34,7 @@ public class AppPrincipal {
 			while (opcion<=6){
 			
 			System.out.println("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
-			System.out.print("Opcion Elegida:");
+			System.out.print("\nOpcion Elegida:");
 			opcion = teclado.nextInt();	
 			opcionModificar = 1;
 			opcionBuscar = 1;
@@ -76,7 +76,7 @@ public class AppPrincipal {
 					
 					System.out.println("\nIndique como desea buscar el contacto:");
 					System.out.println("1..Mediante Email\n2..Mediante cualquier expresion textual\n0..Volver al Menu Principal");
-					System.out.print("Opcion Elegida:");
+					System.out.print("\nOpcion Elegida:");
 					opcionBuscar = teclado.nextInt();
 								
 					switch(opcionBuscar){
@@ -128,7 +128,7 @@ public class AppPrincipal {
 				
 					System.out.println("\nIndique que atributo desea modificar del contacto:");
 					System.out.println("1..Nombre\n2..Apellido\n3..Email\n4..Movil\n0..Volver al Menu Principal");
-					System.out.print("Opcion Elegida:");
+					System.out.print("\nOpcion Elegida:");
 					opcionModificar = teclado.nextInt();
 								
 					switch(opcionModificar){
@@ -215,10 +215,9 @@ public class AppPrincipal {
 								
 				System.out.print("Esta seguro de que desea eliminar TODOS los contactos de la agenda (S/N):");
 				opcionEliminarTodo = teclado.next();
-				System.out.print("\n");
 				if(opcionEliminarTodo.equals("S")){
-					if(!agendaPrincipal.eliminarTodosLosContactos()) System.out.println("No existen contactos en la agenda a eliminar.");
-					System.out.println("Todos los contactos han sido eliminados.");
+					if(agendaPrincipal.eliminarTodosLosContactos()) System.out.println("\nTodos los contactos han sido eliminados.");
+					else System.out.println("\nNo existen contactos en la agenda a eliminar.");
 					opcionEliminarTodo = "N";
 					
 					System.out.println("\nPresione enter para continuar.");
