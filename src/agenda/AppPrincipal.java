@@ -34,6 +34,7 @@ public class AppPrincipal {
 			while (opcion<=6){
 			
 			System.out.println("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
+			System.out.print("Opcion Elegida:");
 			opcion = teclado.nextInt();	
 			opcionModificar = 1;
 			opcionBuscar = 1;
@@ -127,6 +128,7 @@ public class AppPrincipal {
 				
 					System.out.println("\nIndique que atributo desea modificar del contacto:");
 					System.out.println("1..Nombre\n2..Apellido\n3..Email\n4..Movil\n0..Volver al Menu Principal");
+					System.out.print("Opcion Elegida:");
 					opcionModificar = teclado.nextInt();
 								
 					switch(opcionModificar){
