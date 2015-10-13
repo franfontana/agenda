@@ -115,15 +115,16 @@ public class Agenda {
 		return retorno;
 	}
 	
-	public boolean mostrarTodosLosContactos(){
-		boolean retorno;
-		if(listaDeContactos.size() > 0){			
-			for(Contacto c : listaDeContactos){
-				System.out.println("Nombre:" + c.getNombre() + "\t" + "Apellido:" + c.getApellido() + "\t" + "Email:" + c.getEmail() + "\t" + "Movil:" + c.getMovil());
+	public String mostrarTodosLosContactos(){
+		String retorno;
+		String listaAMostrar = "";
+		if(listaDeContactos.size() > 0){
+			for(Contacto c : listaDeContactos){			
+				listaAMostrar+="Nombre:" + c.getNombre() + "\t" + "Apellido:" + c.getApellido() + "\t" + "Email:" + c.getEmail() + "\t" + "Movil:" + c.getMovil() + "\n";	
 			}
-			retorno = true;
-		}else{
-			retorno = false;
+			retorno = listaAMostrar;
+		}else{	
+			retorno = null;
 		}
 		return retorno;
 	}
