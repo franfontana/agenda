@@ -160,15 +160,10 @@ public class AppPrincipal {
 				do{
 					System.out.print("Ingrese el email del contacto a eliminar:");
 					emailIngresado = teclado.next();
-				}while(!validarEmail(emailIngresado));
-				nombreIngresado = "";
-				apellidoIngresado = "";
-				movilIngresado = "";				
-				if(agendaPrincipal.eliminarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado)){
-					System.out.println("\nEl contacto se ha eliminado de la agenda.");
-				}else{
-					System.out.println("No se encuentra el contacto a eliminar.");
-				}								
+				}while(!validarEmail(emailIngresado));				
+				if(agendaPrincipal.eliminarContacto(emailIngresado)) System.out.println("\nEl contacto se ha eliminado de la agenda.");
+				else System.out.println("No se encuentra el contacto a eliminar.");
+				
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
