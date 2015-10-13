@@ -72,7 +72,7 @@ public class AppPrincipal {
 			
 			case 2:
 				
-				while (opcionBuscar<=2){
+				while (opcionBuscar<=3){
 					
 					System.out.println("\nIndique como desea buscar el contacto:");
 					System.out.println("1..Mediante Email\n2..Mediante cualquier expresion textual\n0..Volver al Menu Principal");
@@ -105,10 +105,11 @@ public class AppPrincipal {
 						break;
 						
 					case 0:
-						opcionBuscar = 3;
+						opcionBuscar = 4;
 						break;
 					}	
 				}
+				break;	
 							
 			case 3:
 				
