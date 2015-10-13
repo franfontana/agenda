@@ -38,8 +38,7 @@ public class Agenda {
 		return contactoEncontrado;
 	}
 	
-	public ArrayList<Contacto> buscarContactosMedianteAlgunAtributo(String busqueda){
-		ArrayList<Contacto> auxList = new ArrayList<Contacto>();
+	public String buscarContactosMedianteAlgunAtributo(String busqueda){
 		String mostrarBusqueda = "";
 		for(Contacto c : listaDeContactos) {
 			if((c.getNombre().equals(busqueda)) || (c.getNombre().equals(c.getApellido())) && !(c.getEmail().equals(busqueda)) && !(c.getMovil().equals(busqueda))) {
@@ -47,39 +46,27 @@ public class Agenda {
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
 				mostrarBusqueda += "\tEmail:" + c.getEmail();
 				mostrarBusqueda += "\tMovil:" + c.getMovil()  + "\n";
-				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				auxList.add(unContacto3);
 			}
 			if((c.getApellido().equals(busqueda)) && (!c.getApellido().equals(c.getNombre()))) {
 				mostrarBusqueda += "Nombre:" + c.getNombre();
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
 				mostrarBusqueda += "\tEmail:" + c.getEmail();
 				mostrarBusqueda += "\tMovil:" + c.getMovil()  + "\n";
-				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				auxList.add(unContacto3);
 			}				
 			if(c.getEmail().equals(busqueda)) {
 				mostrarBusqueda += "Nombre:" + c.getNombre();
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
 				mostrarBusqueda += "\tEmail:" + c.getEmail();
 				mostrarBusqueda += "\tMovil:" + c.getMovil() + "\n";
-				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				auxList.add(unContacto3);
 			}
 			if(c.getMovil().equals(busqueda)) {
 				mostrarBusqueda += "Nombre:" + c.getNombre();
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
 				mostrarBusqueda += "\tEmail:" + c.getEmail();
-				mostrarBusqueda += "\tMovil:" + c.getMovil() + "\n";
-				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				auxList.add(unContacto3);	
+				mostrarBusqueda += "\tMovil:" + c.getMovil() + "\n";	
 			}
-		}		
-		if(auxList.size() != 0){
-			System.out.println("\nContactos Encontrados:");
-			System.out.println(mostrarBusqueda);
 		}
-		return auxList;
+		return mostrarBusqueda;
 	}
 	
 	public boolean modificarContacto(String emailDeContactoAModificar, String atributoAModificar, String nuevoValorDeAtributo) {

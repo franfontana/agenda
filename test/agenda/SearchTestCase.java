@@ -21,12 +21,8 @@ public class SearchTestCase {
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
 		assertEquals(1, miLista.size());
-		ArrayList<Contacto> contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
-		assertEquals(1, contactosEncontrados.size());			
-		assertEquals(contactosEncontrados.get(0).getNombre(), contacto.getNombre());
-		assertEquals(contactosEncontrados.get(0).getApellido(), contacto.getApellido());
-		assertEquals(contactosEncontrados.get(0).getEmail(), contacto.getEmail());
-		assertEquals(contactosEncontrados.get(0).getMovil(), contacto.getMovil());
+		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
+		assertTrue(contactosEncontrados.length()>0);			
 		System.out.println("\nEncuentra contactos existentes por nombre");
 	}
 	
@@ -42,12 +38,8 @@ public class SearchTestCase {
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
 		assertEquals(1, miLista.size());
-		ArrayList<Contacto> contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
-		assertEquals(1, contactosEncontrados.size());			
-		assertEquals(contactosEncontrados.get(0).getNombre(), contacto.getNombre());
-		assertEquals(contactosEncontrados.get(0).getApellido(), contacto.getApellido());
-		assertEquals(contactosEncontrados.get(0).getEmail(), contacto.getEmail());
-		assertEquals(contactosEncontrados.get(0).getMovil(), contacto.getMovil());
+		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
+		assertTrue(contactosEncontrados.length()>0);			
 		System.out.println("\nEncuentra contactos existentes por apellido");
 	}
 	
@@ -62,12 +54,8 @@ public class SearchTestCase {
 		Contacto contacto = new Contacto(nombreTest, nombreTest, emailTest, movilTest);
 		miLista.add(contacto);
 		assertEquals(1, miLista.size());
-		ArrayList<Contacto> contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
-		assertEquals(1, contactosEncontrados.size());			
-		assertEquals(contactosEncontrados.get(0).getNombre(), contacto.getNombre());
-		assertEquals(contactosEncontrados.get(0).getApellido(), contacto.getApellido());
-		assertEquals(contactosEncontrados.get(0).getEmail(), contacto.getEmail());
-		assertEquals(contactosEncontrados.get(0).getMovil(), contacto.getMovil());
+		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
+		assertTrue(contactosEncontrados.length()>0);			
 		System.out.println("\nEncuentra contactos existentes con identico nombre y apellido buscado por nombre");
 	}
 	
@@ -82,12 +70,8 @@ public class SearchTestCase {
 		Contacto contacto = new Contacto(nombreTest, nombreTest, emailTest, movilTest);
 		miLista.add(contacto);
 		assertEquals(1, miLista.size());
-		ArrayList<Contacto> contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
-		assertEquals(1, contactosEncontrados.size());			
-		assertEquals(contactosEncontrados.get(0).getNombre(), contacto.getNombre());
-		assertEquals(contactosEncontrados.get(0).getApellido(), contacto.getApellido());
-		assertEquals(contactosEncontrados.get(0).getEmail(), contacto.getEmail());
-		assertEquals(contactosEncontrados.get(0).getMovil(), contacto.getMovil());
+		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
+		assertTrue(contactosEncontrados.length()>0);
 		System.out.println("\nEncuentra contactos existentes con identico nombre y apellido buscado por nombre");
 	}
 	
@@ -102,12 +86,8 @@ public class SearchTestCase {
 		Contacto contacto = new Contacto(nombreTest, nombreTest, emailTest, movilTest);
 		miLista.add(contacto);
 		assertEquals(1, miLista.size());
-		ArrayList<Contacto> contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
-		assertEquals(1, contactosEncontrados.size());			
-		assertEquals(contactosEncontrados.get(0).getNombre(), contacto.getNombre());
-		assertEquals(contactosEncontrados.get(0).getApellido(), contacto.getApellido());
-		assertEquals(contactosEncontrados.get(0).getEmail(), contacto.getEmail());
-		assertEquals(contactosEncontrados.get(0).getMovil(), contacto.getMovil());
+		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
+		assertTrue(contactosEncontrados.length()>0);
 		System.out.println("\nEncuentra contactos existentes con identico nombre y apellido buscado por nombre");
 	}
 	
@@ -122,12 +102,8 @@ public class SearchTestCase {
 		Contacto contacto = new Contacto(apellidoTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
 		assertEquals(1, miLista.size());
-		ArrayList<Contacto> contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
-		assertEquals(1, contactosEncontrados.size());			
-		assertEquals(contactosEncontrados.get(0).getNombre(), contacto.getNombre());
-		assertEquals(contactosEncontrados.get(0).getApellido(), contacto.getApellido());
-		assertEquals(contactosEncontrados.get(0).getEmail(), contacto.getEmail());
-		assertEquals(contactosEncontrados.get(0).getMovil(), contacto.getMovil());
+		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
+		assertTrue(contactosEncontrados.length()>0);
 		System.out.println("\nEncuentra contactos existentes con identico nombre y apellido buscado por apellido");
 	}
 	
