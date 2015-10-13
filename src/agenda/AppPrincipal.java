@@ -184,10 +184,10 @@ public class AppPrincipal {
 				opcionEliminarTodo = teclado.next();
 				System.out.print("\n");
 				if(opcionEliminarTodo.equals("S")){
-					if(!agendaPrincipal.eliminarTodosLosContactos()){
-						System.out.println("No existen contactos en la agenda a eliminar.");
-					}
+					if(!agendaPrincipal.eliminarTodosLosContactos()) System.out.println("No existen contactos en la agenda a eliminar.");
+					System.out.println("Todos los contactos han sido eliminados.");
 					opcionEliminarTodo = "N";
+					
 					System.out.println("\nPresione enter para continuar.");
 					waitForKeypress.nextLine();
 				}				
