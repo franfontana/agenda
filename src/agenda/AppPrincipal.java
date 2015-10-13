@@ -18,10 +18,11 @@ public class AppPrincipal {
 		String apellidoIngresado = new String();
 		String emailIngresado = new String();
 		String movilIngresado = new String();
-		String atributoBuscado = new String();
+		String emailDeContactoABuscar = new String();
 		ArrayList<Contacto> miListaPrincipal = new ArrayList<Contacto>();
 		ArrayList<Contacto> miListaDeBusqueda = new ArrayList<Contacto>();
 		Agenda agendaPrincipal = new Agenda(miListaPrincipal);
+		Contacto contacto = new Contacto();
 		
 			while (opcion<=6){
 			
@@ -62,12 +63,13 @@ public class AppPrincipal {
 			
 			case 2:
 				
-				System.out.print("\nIngrese cualquier atributo del contacto a buscar:");
-				atributoBuscado = teclado.next();
-				miListaDeBusqueda = agendaPrincipal.buscarContacto(atributoBuscado);
-				if(miListaDeBusqueda.size() == 0){
-					System.out.println("No existe contacto con dicho atributo.");
-				}
+				System.out.print("\nIngrese el email del contacto a buscar:");
+				emailDeContactoABuscar = teclado.next();
+				contacto = agendaPrincipal.buscarUnContacto(emailDeContactoABuscar);
+				if(contacto != null){
+					System.out.println("\nContacto encontrado:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
+				}else System.out.println("No existe el contacto.");
+				
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
