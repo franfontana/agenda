@@ -12,6 +12,7 @@ public class AppPrincipal {
 		Scanner waitForKeypress = new Scanner(System.in);
 
 		int opcion=1;
+		int opcionBuscar = 1;
 		int opcionModificar = 1;	
 		String opcionEliminarTodo = "N";
 		String nombreIngresado = new String();
@@ -23,8 +24,10 @@ public class AppPrincipal {
 		String nuevoApellidoIngresado = new String();
 		String nuevoEmailIngresado = new String();
 		String nuevoMovilIngresado = new String();
-		ArrayList<Contacto> miListaPrincipal = new ArrayList<Contacto>();
 		String todosLosContactos = new String();
+		String expresionABuscar = new String();
+		String todosLosContactosMedianteExpresion = new String();
+		ArrayList<Contacto> miListaPrincipal = new ArrayList<Contacto>();
 		Agenda agendaPrincipal = new Agenda(miListaPrincipal);
 		Contacto contacto = new Contacto();
 		
@@ -33,6 +36,7 @@ public class AppPrincipal {
 			System.out.println("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
 			opcion = teclado.nextInt();	
 			opcionModificar = 1;
+			opcionBuscar = 1;
 		
 			switch (opcion){
 			case 1:
@@ -67,17 +71,44 @@ public class AppPrincipal {
 			
 			case 2:
 				
-				System.out.print("\nIngrese el email del contacto a buscar:");
-				emailDeContactoABuscar = teclado.next();
-				contacto = agendaPrincipal.buscarUnContacto(emailDeContactoABuscar);
-				if(contacto != null){
-					System.out.println("\nContacto encontrado:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
-				}else System.out.println("No existe el contacto.");
-				
-				System.out.println("\nPresione enter para continuar.");
-				waitForKeypress.nextLine();
-				break;
-				
+				while (opcionBuscar<=2){
+					
+					System.out.println("\nIndique como desea buscar el contacto:");
+					System.out.println("1..Mediante Email\n2..Mediante cualquier expresion textual\n0..Volver al Menu Principal");
+					System.out.print("Opcion Elegida:");
+					opcionBuscar = teclado.nextInt();
+								
+					switch(opcionBuscar){
+					case 1:
+						
+						System.out.print("\nIngrese el email del contacto a buscar:");
+						emailDeContactoABuscar = teclado.next();
+						contacto = agendaPrincipal.buscarUnContacto(emailDeContactoABuscar);
+						if(contacto != null) System.out.println("\nContacto encontrado:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
+						else System.out.println("No existe el contacto.");
+						
+						System.out.println("\nPresione enter para continuar.");
+						waitForKeypress.nextLine();
+						break;
+					
+					case 2:
+						
+						System.out.print("\nIngrese la expresion a buscar:");
+						expresionABuscar = teclado.next();
+						todosLosContactosMedianteExpresion = agendaPrincipal.buscarContactosMedianteAlgunAtributo(expresionABuscar);
+						if(todosLosContactosMedianteExpresion.length()>0) System.out.println("Contactos encontrados:\n" + todosLosContactosMedianteExpresion);
+						else System.out.println("No existen contactos que contengan dicha expresion");
+						
+						System.out.println("\nPresione enter para continuar.");
+						waitForKeypress.nextLine();
+						break;
+						
+					case 0:
+						opcionModificar = 3;
+						break;
+					}	
+				}
+							
 			case 3:
 				
 				do{
