@@ -109,9 +109,7 @@ public class Agenda {
 				retorno = true;
 				break;
 			}
-		}else{
-			retorno = false;
-		}
+		}else retorno = false;
 		return retorno;
 	}
 	
@@ -123,9 +121,7 @@ public class Agenda {
 				listaAMostrar+="Nombre:" + c.getNombre() + "\t" + "Apellido:" + c.getApellido() + "\t" + "Email:" + c.getEmail() + "\t" + "Movil:" + c.getMovil() + "\n";	
 			}
 			retorno = listaAMostrar;
-		}else{	
-			retorno = null;
-		}
+		}else retorno = null;
 		return retorno;
 	}
 	
@@ -134,9 +130,7 @@ public class Agenda {
 		if(listaDeContactos.size() > 0){
 			listaDeContactos.removeAll(listaDeContactos);
 			retorno = true;
-		}else{
-			retorno = false;
-		}
+		}else retorno = false;
 		return retorno;
 	}
 	
