@@ -24,7 +24,7 @@ public class AppPrincipal {
 		String nuevoEmailIngresado = new String();
 		String nuevoMovilIngresado = new String();
 		ArrayList<Contacto> miListaPrincipal = new ArrayList<Contacto>();
-		ArrayList<Contacto> miListaDeBusqueda = new ArrayList<Contacto>();
+		String todosLosContactos = new String();
 		Agenda agendaPrincipal = new Agenda(miListaPrincipal);
 		Contacto contacto = new Contacto();
 		
@@ -170,9 +170,10 @@ public class AppPrincipal {
 				
 			case 5:
 				
-				if(!agendaPrincipal.mostrarTodosLosContactos()){
-					System.out.println("No existen contactos en la agenda.");
-				}
+				todosLosContactos = agendaPrincipal.mostrarTodosLosContactos();
+				if(todosLosContactos.equals(null)) System.out.println("No existen contactos en la agenda.");
+				else System.out.println("Lista de todos los contactos:\n" + todosLosContactos);
+				
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
 				break;
