@@ -105,7 +105,7 @@ public class AppPrincipal {
 						break;
 						
 					case 0:
-						opcionModificar = 3;
+						opcionBuscar = 3;
 						break;
 					}	
 				}
