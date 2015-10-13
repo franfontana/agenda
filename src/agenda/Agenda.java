@@ -17,113 +17,107 @@ public class Agenda {
 
 	public boolean agregarContacto(String nombre, String apellido, String email, String movil){
 		boolean retorno;
-		ArrayList<Contacto> contactosEncontrados = buscarContacto(email);
-		if(contactosEncontrados.size() == 0){
+		if(buscarUnContacto(email) == null){
 			Contacto unContacto1 = new Contacto(nombre, apellido, email, movil);
-			this.listaDeContactos.add(unContacto1);
-			System.out.println("\nContacto ingresado correctamente:\n" + "Nombre:" + unContacto1.getNombre() + "\t" + "Apellido:" + unContacto1.getApellido() + "\t" + "Email:" + unContacto1.getEmail() + "\t" + "Movil:" + unContacto1.getMovil() + "\n");
-			retorno = true;
-		}else{
-			System.out.println("NO se ha insertado el contacto en la agenda.");
-			System.out.println("El contacto encontrado en la agenda es el que contiene el email a insertar y no es posible duplicarlo.");
-			retorno = false;
-		}
+			if(this.listaDeContactos.add(unContacto1)) retorno = true; else retorno = false;				
+		}else retorno = false;		
 		return retorno;
 	}
 	
-	public boolean eliminarContacto(String nombre, String apellido, String email, String movil){
+	public boolean eliminarContacto(String email){
 		boolean retorno;
-		Contacto unContacto2 = new Contacto(nombre, apellido, email, movil);
-		if(this.listaDeContactos.remove(unContacto2)){
-			retorno = true;
-		}else{
-			retorno = false;
-		}
+		if(this.listaDeContactos.remove(buscarUnContacto(email))) retorno = true; else retorno = false;
 		return retorno;
 	}
 	
-	public ArrayList<Contacto> buscarContacto(String busqueda){
-		ArrayList<Contacto> auxList = new ArrayList<Contacto>();
+	public Contacto buscarUnContacto(String email){
+		Contacto contactoEncontrado = null;
+		for(Contacto c : listaDeContactos){
+			if(c.getEmail().equals(email)) contactoEncontrado = c; else contactoEncontrado = null;
+		}
+		return contactoEncontrado;
+	}
+	
+	public String buscarContactosMedianteAlgunAtributo(String busqueda){
 		String mostrarBusqueda = "";
 		for(Contacto c : listaDeContactos) {
-			if(c.getNombre().equals(busqueda)) {
+			if((c.getNombre().equals(busqueda)) || (c.getNombre().equals(c.getApellido())) && !(c.getEmail().equals(busqueda)) && !(c.getMovil().equals(busqueda))) {
 				mostrarBusqueda += "Nombre:" + c.getNombre();
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
 				mostrarBusqueda += "\tEmail:" + c.getEmail();
 				mostrarBusqueda += "\tMovil:" + c.getMovil()  + "\n";
-				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				auxList.add(unContacto3);
 			}
-			if(c.getApellido().equals(busqueda)) {
+			if((c.getApellido().equals(busqueda)) && (!c.getApellido().equals(c.getNombre()))) {
 				mostrarBusqueda += "Nombre:" + c.getNombre();
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
 				mostrarBusqueda += "\tEmail:" + c.getEmail();
 				mostrarBusqueda += "\tMovil:" + c.getMovil()  + "\n";
-				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				auxList.add(unContacto3);
-			}
+			}				
 			if(c.getEmail().equals(busqueda)) {
 				mostrarBusqueda += "Nombre:" + c.getNombre();
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
 				mostrarBusqueda += "\tEmail:" + c.getEmail();
 				mostrarBusqueda += "\tMovil:" + c.getMovil() + "\n";
-				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				auxList.add(unContacto3);
 			}
 			if(c.getMovil().equals(busqueda)) {
 				mostrarBusqueda += "Nombre:" + c.getNombre();
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
 				mostrarBusqueda += "\tEmail:" + c.getEmail();
-				mostrarBusqueda += "\tMovil:" + c.getMovil() + "\n";
-				Contacto unContacto3 =  new Contacto(c.getNombre(), c.getApellido(), c.getEmail(), c.getMovil());
-				auxList.add(unContacto3);	
+				mostrarBusqueda += "\tMovil:" + c.getMovil() + "\n";	
 			}
-		}		
-		if(auxList.size() != 0){
-			System.out.println("\nContactos Encontrados:");
-			System.out.println(mostrarBusqueda);
 		}
-		return auxList;
+		return mostrarBusqueda;
 	}
 	
-	public boolean modificarContacto(String nombre, String apellido, String email, String movil, String nuevoNombre, String nuevoApellido, String nuevoEmail, String nuevoMovil) {
-		ArrayList<Contacto> auxList2 = new ArrayList<Contacto>();
+	public boolean modificarContacto(String emailDeContactoAModificar, String atributoAModificar, String nuevoValorDeAtributo) {
 		boolean retorno = false;
-		auxList2 = buscarContacto(nuevoEmail);
-			if(auxList2.size() == 0 || nuevoEmail == email){
-				eliminarContacto(nombre, apellido, email, movil);
-			}else{
-				retorno = false;
-			}			
-		retorno = agregarContacto(nuevoNombre, nuevoApellido, nuevoEmail, nuevoMovil);
-		if(retorno == false){
-			System.out.println("\nNo se ha modificado el contacto.");
-		}
+		int opcion = 0;
+		if(atributoAModificar.equals("Nombre")) opcion = 1;
+		if(atributoAModificar.equals("Apellido")) opcion = 2;
+		if(atributoAModificar.equals("Email")) opcion = 3;
+		if(atributoAModificar.equals("Movil")) opcion = 4;
+		Contacto contactoAModificar = buscarUnContacto(emailDeContactoAModificar);
+		if(contactoAModificar != null){
+			switch(opcion){
+			case 1:
+				contactoAModificar.setNombre(nuevoValorDeAtributo);
+				retorno = true;
+				break;
+			case 2:
+				contactoAModificar.setApellido(nuevoValorDeAtributo);
+				retorno = true;
+				break;
+			case 3:
+				contactoAModificar.setEmail(nuevoValorDeAtributo);
+				retorno = true;
+				break;
+			case 4:
+				contactoAModificar.setMovil(nuevoValorDeAtributo);
+				retorno = true;
+				break;
+			}
+		}else retorno = false;
 		return retorno;
 	}
 	
-	public boolean mostrarTodosLosContactos(){
-		boolean retorno;
+	public String mostrarTodosLosContactos(){
+		String retorno;
+		String listaAMostrar = "";
 		if(listaDeContactos.size() > 0){
-			retorno = true;			
-			for(Contacto c : listaDeContactos){
-				System.out.println("Nombre:" + c.getNombre() + "\t" + "Apellido:" + c.getApellido() + "\t" + "Email:" + c.getEmail() + "\t" + "Movil:" + c.getMovil());
+			for(Contacto c : listaDeContactos){			
+				listaAMostrar+="Nombre:" + c.getNombre() + "\t" + "Apellido:" + c.getApellido() + "\t" + "Email:" + c.getEmail() + "\t" + "Movil:" + c.getMovil() + "\n";	
 			}
-		}else{
-			retorno  = false;
-		}
+			retorno = listaAMostrar;
+		}else retorno = null;
 		return retorno;
 	}
 	
 	public boolean eliminarTodosLosContactos(){
 		boolean retorno;
 		if(listaDeContactos.size() > 0){
-			retorno = true;
 			listaDeContactos.removeAll(listaDeContactos);
-			System.out.println("Todos los contactos han sido eliminados.");
-		}else{
-			retorno = false;
-		}
+			retorno = true;
+		}else retorno = false;
 		return retorno;
 	}
 	

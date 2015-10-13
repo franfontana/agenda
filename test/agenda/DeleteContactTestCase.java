@@ -20,7 +20,7 @@ public class DeleteContactTestCase {
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
 		assertEquals(1,miLista.size());
-		assertTrue(agenda.eliminarContacto(nombreTest, apellidoTest, emailTest, movilTest));
+		assertTrue(agenda.eliminarContacto(emailTest));
 		assertEquals(0,miLista.size());
 		System.out.println("Elimina un contacto generado y corrobora en lista");
 	}
