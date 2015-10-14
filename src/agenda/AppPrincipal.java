@@ -205,7 +205,7 @@ public class AppPrincipal {
 			case 5:
 				
 				todosLosContactos = agendaPrincipal.mostrarTodosLosContactos();
-				if(todosLosContactos.equals(null)) System.out.println("No existen contactos en la agenda.");
+				if(todosLosContactos == null) System.out.println("No existen contactos en la agenda.");
 				else System.out.println("Lista de todos los contactos:\n" + todosLosContactos);
 				
 				System.out.println("\nPresione enter para continuar.");
