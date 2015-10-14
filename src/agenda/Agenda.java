@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Agenda {
 
 	ArrayList<Contacto> listaDeContactos= new ArrayList<Contacto>();
-	int index;
+	int contador = 0;
 	
 	public Agenda() {
 
@@ -19,7 +19,10 @@ public class Agenda {
 		boolean retorno;
 		if(buscarUnContacto(email) == null){
 			Contacto unContacto1 = new Contacto(nombre, apellido, email, movil);
-			if(this.listaDeContactos.add(unContacto1)) retorno = true; else retorno = false;				
+			if(this.listaDeContactos.add(unContacto1)){
+				retorno = true;
+				contador=contador+1;				
+			}else retorno = false;
 		}else retorno = false;		
 		return retorno;
 	}
