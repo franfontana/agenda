@@ -20,6 +20,7 @@ public class SearchTestCase {
 		String atributoTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());		
 		assertEquals(null, agenda.buscarUnContacto(atributoTest));
 		System.out.println("No encuentra contacto inexistente");
@@ -35,6 +36,7 @@ public class SearchTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		assertEquals(contacto, agenda.buscarUnContacto(emailTest));	
 		System.out.println("Encuentra contacto mediante email");
@@ -51,6 +53,7 @@ public class SearchTestCase {
 		String atributoTest = nombreTest;
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
 		assertTrue(contactosEncontrados.length()>0);			
@@ -68,6 +71,7 @@ public class SearchTestCase {
 		String atributoTest = apellidoTest;
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
 		assertTrue(contactosEncontrados.length()>0);			
@@ -84,6 +88,7 @@ public class SearchTestCase {
 		String atributoTest = nombreTest;
 		Contacto contacto = new Contacto(nombreTest, nombreTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
 		assertTrue(contactosEncontrados.length()>0);			
@@ -100,6 +105,7 @@ public class SearchTestCase {
 		String atributoTest = emailTest;
 		Contacto contacto = new Contacto(nombreTest, nombreTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
 		assertTrue(contactosEncontrados.length()>0);
@@ -116,6 +122,7 @@ public class SearchTestCase {
 		String atributoTest = movilTest;
 		Contacto contacto = new Contacto(nombreTest, nombreTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
 		assertTrue(contactosEncontrados.length()>0);
@@ -132,6 +139,7 @@ public class SearchTestCase {
 		String atributoTest = apellidoTest;
 		Contacto contacto = new Contacto(apellidoTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(atributoTest);
 		assertTrue(contactosEncontrados.length()>0);
@@ -146,7 +154,7 @@ public class SearchTestCase {
 		String expresionTest = nombreTest;
 		assertEquals(0, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(expresionTest);
-		assertTrue(contactosEncontrados.length()==0);			
+		assertEquals(0, contactosEncontrados.length());			
 		System.out.println("No encuentra contactos inexistentes mediante expresion");
 	}
 	
@@ -156,7 +164,7 @@ public class SearchTestCase {
 		Agenda agenda = new Agenda(miLista);
 		assertEquals(0, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(null);
-		assertTrue(contactosEncontrados.length()==0);			
+		assertEquals(0, contactosEncontrados.length());			
 		System.out.println("No encuentra contactos inexistentes sin ingresar expresion");
 	}
 	
@@ -171,9 +179,10 @@ public class SearchTestCase {
 		String expresionTest = null;
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(expresionTest);
-		assertTrue(contactosEncontrados.length()==0);
+		assertEquals(0, contactosEncontrados.length());
 		System.out.println("No encuentra contactos existentes mediante expresion null");
 	}
 }

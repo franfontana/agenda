@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Agenda {
 
 	ArrayList<Contacto> listaDeContactos= new ArrayList<Contacto>();
-	int index;
+	int contador = 0;
 	
 	public Agenda() {
 
@@ -19,20 +19,26 @@ public class Agenda {
 		boolean retorno;
 		if(buscarUnContacto(email) == null){
 			Contacto unContacto1 = new Contacto(nombre, apellido, email, movil);
-			if(this.listaDeContactos.add(unContacto1)) retorno = true; else retorno = false;				
+			if(this.listaDeContactos.add(unContacto1)){
+				retorno = true;
+				contador = contador+1;				
+			}else retorno = false;
 		}else retorno = false;		
 		return retorno;
 	}
 	
 	public boolean eliminarContacto(String email){
 		boolean retorno;
-		if(this.listaDeContactos.remove(buscarUnContacto(email))) retorno = true; else retorno = false;
+		if(this.listaDeContactos.remove(buscarUnContacto(email))){
+			contador = contador-1;
+			retorno = true;
+		}else retorno = false;
 		return retorno;
 	}
 	
 	public Contacto buscarUnContacto(String email){
 		Contacto contactoEncontrado = null;
-		for(Contacto c : listaDeContactos){
+		for(Contacto c : this.listaDeContactos){
 			if(c.getEmail().equals(email)) contactoEncontrado = c; else contactoEncontrado = null;
 		}
 		return contactoEncontrado;
@@ -40,7 +46,7 @@ public class Agenda {
 	
 	public String buscarContactosMedianteAlgunAtributo(String busqueda){
 		String mostrarBusqueda = "";
-		for(Contacto c : listaDeContactos) {
+		for(Contacto c : this.listaDeContactos) {
 			if((c.getNombre().equals(busqueda)) || (c.getNombre().equals(c.getApellido())) && !(c.getEmail().equals(busqueda)) && !(c.getMovil().equals(busqueda))) {
 				mostrarBusqueda += "Nombre:" + c.getNombre();
 				mostrarBusqueda += "\tApellido:" + c.getApellido();
@@ -103,8 +109,8 @@ public class Agenda {
 	public String mostrarTodosLosContactos(){
 		String retorno;
 		String listaAMostrar = "";
-		if(listaDeContactos.size() > 0){
-			for(Contacto c : listaDeContactos){			
+		if(contador > 0){
+			for(Contacto c : this.listaDeContactos){			
 				listaAMostrar+="Nombre:" + c.getNombre() + "\t" + "Apellido:" + c.getApellido() + "\t" + "Email:" + c.getEmail() + "\t" + "Movil:" + c.getMovil() + "\n";	
 			}
 			retorno = listaAMostrar;
@@ -114,8 +120,9 @@ public class Agenda {
 	
 	public boolean eliminarTodosLosContactos(){
 		boolean retorno;
-		if(listaDeContactos.size() > 0){
-			listaDeContactos.removeAll(listaDeContactos);
+		if(contador > 0){
+			this.listaDeContactos.removeAll(listaDeContactos);
+			contador = 0;
 			retorno = true;
 		}else retorno = false;
 		return retorno;
