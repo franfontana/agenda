@@ -19,6 +19,7 @@ public class ModifyContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String emailDeContactoAModificar = emailTest;
 		String[] atributoAModificar = {"Nombre", "Apellido", "Email", "Movil"};
@@ -38,6 +39,7 @@ public class ModifyContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String emailDeContactoAModificar = UUID.randomUUID().toString();
 		String atributoAModificar = UUID.randomUUID().toString();
@@ -56,6 +58,7 @@ public class ModifyContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String emailDeContactoAModificar = emailTest;
 		String atributoAModificar = "Nombre";
@@ -75,6 +78,7 @@ public class ModifyContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String emailDeContactoAModificar = emailTest;
 		String atributoAModificar = "Apellido";
@@ -94,6 +98,7 @@ public class ModifyContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String emailDeContactoAModificar = emailTest;
 		String atributoAModificar = "Email";
@@ -113,6 +118,7 @@ public class ModifyContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String emailDeContactoAModificar = emailTest;
 		String atributoAModificar = "Movil";

@@ -19,9 +19,11 @@ public class DeleteContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1,miLista.size());
 		assertTrue(agenda.eliminarContacto(emailTest));
 		assertEquals(0,miLista.size());
+		assertEquals(0, agenda.contador);
 		System.out.println("Elimina un contacto generado y corrobora en lista");
 	}
 	
@@ -35,9 +37,11 @@ public class DeleteContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		assertTrue(agenda.eliminarTodosLosContactos());
 		assertEquals(0, miLista.size());
+		assertEquals(0, agenda.contador);
 		System.out.println("Elimina todos los contactos");
 	}
 

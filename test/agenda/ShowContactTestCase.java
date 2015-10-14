@@ -19,8 +19,9 @@ public class ShowContactTestCase {
 		String movilTest = UUID.randomUUID().toString();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto);
+		agenda.contador = 1;
 		assertEquals(1, miLista.size());
-		assertTrue(agenda.mostrarTodosLosContactos().length()>0);
+		assertNotEquals(null, agenda.mostrarTodosLosContactos());
 		System.out.println("Muestra todos los contactos");
 	}
 	
@@ -38,10 +39,12 @@ public class ShowContactTestCase {
 		String otromovilTest = UUID.randomUUID().toString();
 		Contacto contacto1 = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		miLista.add(contacto1);
+		agenda.contador = 1;
 		Contacto contacto2 = new Contacto(otronombreTest, otroapellidoTest, otroemailTest, otromovilTest);
 		miLista.add(contacto2);
+		agenda.contador = 2;
 		assertEquals(2, miLista.size());
-		assertTrue(agenda.mostrarTodosLosContactos().length()>0);
+		assertNotEquals(null, agenda.mostrarTodosLosContactos());
 		System.out.println("Muestra todos los contactos (mas de dos)");
 	}
 	
