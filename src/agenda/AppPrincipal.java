@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class AppPrincipal {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 				
 		System.out.println("AGENDA PERSONAL\n");
 		Scanner teclado = new Scanner(System.in);
@@ -33,7 +33,7 @@ public class AppPrincipal {
 		
 			while (opcion<=6){
 			
-			System.out.println("MENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
+			System.out.println("\nMENU DE OPCIONES:\nIngrese la opcion a realizar:\n1..Nuevo Contacto\n2..Buscar Contacto\n3..Modificar Contacto\n4..Eliminar Contacto\n5..Listado de Contactos\n6..Eliminar TODOS los contactos de la Agenda\n0..Salir de la Agenda");
 			System.out.print("\nOpcion Elegida:");
 			opcion = teclado.nextInt();	
 			opcionModificar = 1;
@@ -64,7 +64,7 @@ public class AppPrincipal {
 			
 				if(agendaPrincipal.agregarContacto(nombreIngresado, apellidoIngresado, emailIngresado, movilIngresado)){
 					System.out.println("\nContacto ingresado correctamente:\n" + "Nombre:" + nombreIngresado + "\t" + "Apellido:" + apellidoIngresado + "\t" + "Email:" + emailIngresado + "\t" + "Movil:" + movilIngresado);
-				}else System.out.println("NO se ha insertado el contacto en la agenda.\nEl contacto existe en la agenda y no es posible duplicarlo.");
+				}else System.out.println("\nNO se ha insertado el contacto en la agenda.\nEl contacto existe en la agenda y no es posible duplicarlo.");
 				
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
@@ -75,7 +75,7 @@ public class AppPrincipal {
 				while (opcionBuscar<=3){
 					
 					System.out.println("\nIndique como desea buscar el contacto:");
-					System.out.println("1..Mediante Email\n2..Mediante cualquier expresion textual\n0..Volver al Menu Principal");
+					System.out.println("1..Mediante Email\n2..Mediante expresion textual que identifique cualquier atributo del contacto\n0..Volver al Menu Principal");
 					System.out.print("\nOpcion Elegida:");
 					opcionBuscar = teclado.nextInt();
 								
@@ -123,7 +123,7 @@ public class AppPrincipal {
 					System.out.println("\nPresione enter para continuar.");
 					waitForKeypress.nextLine();
 					break;
-				}
+				}else System.out.println("\nEl contacto a modificar es el siguiente:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
 				
 				while (opcionModificar<=5){
 				
@@ -138,7 +138,7 @@ public class AppPrincipal {
 							System.out.print("Ingrese el nuevo nombre del contacto:");
 							nuevoNombreIngresado = teclado.next();
 						}while(!validarNombre(nuevoNombreIngresado));
-						if(agendaPrincipal.modificarContacto(contacto.getEmail(), "Nombre", nuevoNombreIngresado)) System.out.println("Se ha modificado el contacto.");
+						if(agendaPrincipal.modificarContacto(contacto.getEmail(), "Nombre", nuevoNombreIngresado)) System.out.println("\nSe ha modificado el contacto, los atributos son los siguientes:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
 						else System.out.println("No se ha modificado el contacto.");
 						
 						System.out.println("\nPresione enter para continuar.");
@@ -150,7 +150,7 @@ public class AppPrincipal {
 							System.out.print("Ingrese el nuevo apellido del contacto:");
 							nuevoApellidoIngresado = teclado.next();
 						}while(!validarApellido(nuevoApellidoIngresado));
-						if(agendaPrincipal.modificarContacto(contacto.getEmail(), "Apellido", nuevoApellidoIngresado)) System.out.println("Se ha modificado el contacto.");
+						if(agendaPrincipal.modificarContacto(contacto.getEmail(), "Apellido", nuevoApellidoIngresado)) System.out.println("\nSe ha modificado el contacto, los atributos son los siguientes:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
 						else System.out.println("No se ha modificado el contacto.");
 						
 						System.out.println("\nPresione enter para continuar.");
@@ -162,7 +162,7 @@ public class AppPrincipal {
 							System.out.print("Ingrese el nuevo email del contacto:");
 							nuevoEmailIngresado = teclado.next();
 						}while(!validarEmail(nuevoEmailIngresado));
-						if(agendaPrincipal.modificarContacto(contacto.getEmail(), "Email", nuevoEmailIngresado)) System.out.println("Se ha modificado el contacto.");
+						if(agendaPrincipal.modificarContacto(contacto.getEmail(), "Email", nuevoEmailIngresado)) System.out.println("\nSe ha modificado el contacto, los atributos son los siguientes:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
 						else System.out.println("No se ha modificado el contacto.");
 						
 						System.out.println("\nPresione enter para continuar.");
@@ -174,7 +174,7 @@ public class AppPrincipal {
 							System.out.print("Ingrese el nuevo telefono movil del contacto en formato de diez numeros ej: 11XXXXXXXX:");
 							nuevoMovilIngresado = teclado.next();
 						}while(!validarTelMovil(nuevoMovilIngresado));
-						if(agendaPrincipal.modificarContacto(contacto.getEmail(), "Movil", nuevoMovilIngresado)) System.out.println("Se ha modificado el contacto.");
+						if(agendaPrincipal.modificarContacto(contacto.getEmail(), "Movil", nuevoMovilIngresado)) System.out.println("\nSe ha modificado el contacto, los atributos son los siguientes:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
 						else System.out.println("No se ha modificado el contacto.");
 						
 						System.out.println("\nPresione enter para continuar.");
@@ -186,7 +186,6 @@ public class AppPrincipal {
 						break;
 					}			
 				}
-
 				break;
 				
 			case 4:
@@ -194,8 +193,14 @@ public class AppPrincipal {
 				do{
 					System.out.print("Ingrese el email del contacto a eliminar:");
 					emailIngresado = teclado.next();
-				}while(!validarEmail(emailIngresado));				
-				if(agendaPrincipal.eliminarContacto(emailIngresado)) System.out.println("\nEl contacto se ha eliminado de la agenda.");
+				}while(!validarEmail(emailIngresado));
+				contacto = agendaPrincipal.buscarUnContacto(emailIngresado);
+				if(contacto != null){
+					System.out.println("\nEl siguiente contacto se eliminar‡ de la agenda:\n" + "Nombre:" + contacto.getNombre() + "\t" + "Apellido:" + contacto.getApellido() + "\t" + "Email:" + contacto.getEmail() + "\t" + "Movil:" + contacto.getMovil());
+					System.out.println("\nPresione enter para continuar.");					
+					waitForKeypress.nextLine();
+				}
+				if(agendaPrincipal.eliminarContacto(emailIngresado)) System.out.println("\nEl contacto se ha eliminado de la agenda:\n");
 				else System.out.println("No se encuentra el contacto a eliminar.");
 				
 				System.out.println("\nPresione enter para continuar.");
@@ -206,7 +211,7 @@ public class AppPrincipal {
 				
 				todosLosContactos = agendaPrincipal.mostrarTodosLosContactos();
 				if(todosLosContactos == null) System.out.println("No existen contactos en la agenda.");
-				else System.out.println("Lista de todos los contactos:\n" + todosLosContactos);
+				else System.out.println("\nLista de todos los contactos:\n" + todosLosContactos);
 				
 				System.out.println("\nPresione enter para continuar.");
 				waitForKeypress.nextLine();
