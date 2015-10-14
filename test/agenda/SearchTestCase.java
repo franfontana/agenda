@@ -154,7 +154,7 @@ public class SearchTestCase {
 		String expresionTest = nombreTest;
 		assertEquals(0, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(expresionTest);
-		assertTrue(contactosEncontrados.length()==0);			
+		assertEquals(0, contactosEncontrados.length());			
 		System.out.println("No encuentra contactos inexistentes mediante expresion");
 	}
 	
@@ -164,7 +164,7 @@ public class SearchTestCase {
 		Agenda agenda = new Agenda(miLista);
 		assertEquals(0, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(null);
-		assertTrue(contactosEncontrados.length()==0);			
+		assertEquals(0, contactosEncontrados.length());			
 		System.out.println("No encuentra contactos inexistentes sin ingresar expresion");
 	}
 	
@@ -182,7 +182,7 @@ public class SearchTestCase {
 		agenda.contador = 1;
 		assertEquals(1, miLista.size());
 		String contactosEncontrados = agenda.buscarContactosMedianteAlgunAtributo(expresionTest);
-		assertTrue(contactosEncontrados.length()==0);
+		assertEquals(0, contactosEncontrados.length());
 		System.out.println("No encuentra contactos existentes mediante expresion null");
 	}
 }
