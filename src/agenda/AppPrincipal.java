@@ -1,7 +1,7 @@
 package agenda;
 
 import java.util.ArrayList;
-import java.util.Scanner;																																			
+import java.util.Scanner;
 
 public class AppPrincipal {
 	
@@ -263,8 +263,17 @@ public class AppPrincipal {
 	}
 	
 	public static boolean validarTelMovil(String mov1){
-		if(mov1.length()==10) return true;
+		if(mov1.length()==10 && esNumerico(mov1)) return true;
 		else return false;
 	}
+	
+	private static boolean esNumerico(String cadena){
+		try {
+			Integer.parseInt(cadena);
+			return true;
+		} catch (NumberFormatException nfe){
+			return false;
+		}
+	}
 }
-
+//mov1.charAt(posicionCaracter)
