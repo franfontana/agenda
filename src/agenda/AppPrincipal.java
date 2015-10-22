@@ -276,4 +276,3 @@ public class AppPrincipal {
 		}
 	}
 }
-//mov1.charAt(posicionCaracter)
