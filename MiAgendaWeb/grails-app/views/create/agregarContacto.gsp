@@ -15,5 +15,6 @@
   	<input type="submit" value="Agregar Contacto"/>
   </form>
   </div>
+  <g:link controller="home" action="index" id=""> Volver al Menu Principal </g:link><br>
 </body>
 </html>

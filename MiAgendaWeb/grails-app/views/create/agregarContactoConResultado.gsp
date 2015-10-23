@@ -20,5 +20,6 @@
   <br>
   ${infoNombre} ${Nombre} <br> ${infoApellido} ${Apellido} <br> ${infoEmail} ${Email} <br> ${infoMovil} ${Movil}
   </div>
+  <g:link controller="home" action="index" id=""> Volver al Menu Principal </g:link><br>
 </body>
 </html>

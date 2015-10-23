@@ -13,6 +13,8 @@ class CreateController {
 
     def index = { }
 	
+	def home = {}
+	
 	def agregarContacto = {}
 	
 	def agregarContactoConResultado = {
