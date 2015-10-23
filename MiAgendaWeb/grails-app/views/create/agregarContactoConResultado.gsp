@@ -16,7 +16,9 @@
   </form>
   <br>
   <br>
-  ${Nombre}  ${Apellido}  ${Email}  ${Movil}
+  ${ContactoAgregado}
+  <br>
+  ${infoNombre} ${Nombre} ${infoApellido} ${Apellido} ${infoEmail} ${Email} ${infoMovil} ${Movil}
   </div>
 </body>
 </html>
