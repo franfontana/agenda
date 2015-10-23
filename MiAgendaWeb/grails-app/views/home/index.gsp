@@ -13,15 +13,15 @@ AGENDA PERSONAL
 MENU DE OPCIONES:
 <br>
 <br>
-Ingrese la opcion a realizar:
+Elija la opcion a realizar:
 <br>
-<g:link controller="create" action="index" id=""> 1..Nuevo Contacto </g:link><br>
-<g:link controller="create" action="index" id=""> 2..Buscar Contacto </g:link><br>
-<g:link controller="create" action="index" id=""> 3..Modificar Contacto </g:link><br>
-<g:link controller="create" action="index" id=""> 4..Eliminar Contacto </g:link><br>
-<g:link controller="create" action="index" id=""> 5..Listado de Contactos </g:link><br>
-<g:link controller="create" action="index" id=""> 6..Eliminar TODOS los contactos de la Agenda </g:link><br>
-<g:link controller="create" action="index" id=""> 0..Salir de la Agenda </g:link><br>  
+<g:link controller="create" action="index" id=""> Nuevo Contacto </g:link><br>
+<g:link controller="create" action="index" id=""> Buscar Contacto </g:link><br>
+<g:link controller="create" action="index" id=""> Modificar Contacto </g:link><br>
+<g:link controller="create" action="index" id=""> Eliminar Contacto </g:link><br>
+<g:link controller="create" action="index" id=""> Listado de Contactos </g:link><br>
+<g:link controller="create" action="index" id=""> Eliminar TODOS los contactos de la Agenda </g:link><br>
+<g:link controller="create" action="index" id=""> Salir de la Agenda </g:link><br>  
   </div>
 </body>
 </html>
