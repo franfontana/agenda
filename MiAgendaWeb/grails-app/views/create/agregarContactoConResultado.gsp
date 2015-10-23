@@ -16,9 +16,9 @@
   </form>
   <br>
   <br>
-  ${ContactoAgregado}
+  ${informeIngresoDeContacto}
   <br>
-  ${infoNombre} ${Nombre} ${infoApellido} ${Apellido} ${infoEmail} ${Email} ${infoMovil} ${Movil}
+  ${infoNombre} ${Nombre} <br> ${infoApellido} ${Apellido} <br> ${infoEmail} ${Email} <br> ${infoMovil} ${Movil}
   </div>
 </body>
 </html>
