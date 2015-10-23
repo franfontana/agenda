@@ -15,7 +15,13 @@ MENU DE OPCIONES:
 <br>
 Ingrese la opcion a realizar:
 <br>
-<g:link controller="create" action="index" id=""> 1..Agregar Contacto </g:link>  
+<g:link controller="create" action="index" id=""> 1..Nuevo Contacto </g:link><br>
+<g:link controller="create" action="index" id=""> 2..Buscar Contacto </g:link><br>
+<g:link controller="create" action="index" id=""> 3..Modificar Contacto </g:link><br>
+<g:link controller="create" action="index" id=""> 4..Eliminar Contacto </g:link><br>
+<g:link controller="create" action="index" id=""> 5..Listado de Contactos </g:link><br>
+<g:link controller="create" action="index" id=""> 6..Eliminar TODOS los contactos de la Agenda </g:link><br>
+<g:link controller="create" action="index" id=""> 0..Salir de la Agenda </g:link><br>  
   </div>
 </body>
 </html>
