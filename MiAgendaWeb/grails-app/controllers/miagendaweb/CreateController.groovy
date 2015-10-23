@@ -7,4 +7,8 @@ class CreateController {
 	def agregarContacto = {
 		
 	}
+	
+	def agregarContactoConResultado = {
+		
+	}
 }

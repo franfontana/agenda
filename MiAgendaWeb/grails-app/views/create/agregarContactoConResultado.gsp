@@ -14,6 +14,9 @@
 	  Ingrese el movil del nuevo contacto:	<input type="text" name="Movil" /><br><br>
   	<input type="submit" value="Agregar Contacto"/>
   </form>
+  <br>
+  <br>
+  ${Nombre}  ${Apellido}  ${Email}  ${Movil}
   </div>
 </body>
 </html>
