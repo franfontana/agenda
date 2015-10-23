@@ -6,7 +6,6 @@ class CreateController {
 	ValidationService validationServiceEnCreateController = new ValidationService();
 	Agenda agendaEnCreateController = new Agenda();
 	String informeIngresoDeContacto = new String();
-	String contactoNoAgregado = new String();
 	String infoNombre;
 	String infoApellido;
 	String infoEmail;
