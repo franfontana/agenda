@@ -11,9 +11,9 @@ class CreateController {
 	String infoEmail;
 	String infoMovil;
 
-    def index = { }
+//    def index = {}
 	
-	def home = {}
+//	  def home = {}
 	
 	def agregarContacto = {}
 	
@@ -26,7 +26,7 @@ class CreateController {
 					infoApellido = "Apellido:";
 					infoEmail = "Email:";
 					infoMovil = "Movil:";
-					[Nombre:createServiceEnCreateController.agendaEnCreateService.listaDeContactos[agendaEnCreateController.contador].getNombre(), Apellido:createServiceEnCreateController.agendaEnCreateService.listaDeContactos[agendaEnCreateController.contador].getApellido(), Email:createServiceEnCreateController.agendaEnCreateService.listaDeContactos[agendaEnCreateController.contador].getEmail(), Movil:createServiceEnCreateController.agendaEnCreateService.listaDeContactos[agendaEnCreateController.contador].getMovil(), informeIngresoDeContacto:informeIngresoDeContacto, infoNombre:infoNombre, infoApellido:infoApellido, infoEmail:infoEmail, infoMovil:infoMovil]
+					[Nombre:createServiceEnCreateController.listaDeContactos[agendaEnCreateController.contador].getNombre(), Apellido:createServiceEnCreateController.listaDeContactos[agendaEnCreateController.contador].getApellido(), Email:createServiceEnCreateController.listaDeContactos[agendaEnCreateController.contador].getEmail(), Movil:createServiceEnCreateController.listaDeContactos[agendaEnCreateController.contador].getMovil(), informeIngresoDeContacto:informeIngresoDeContacto, infoNombre:infoNombre, infoApellido:infoApellido, infoEmail:infoEmail, infoMovil:infoMovil]
 			}else{
 				informeIngresoDeContacto = "Los datos no se ingresaron correctamente, por favor reingrese los atributos del contacto.";
 				[informeIngresoDeContacto:informeIngresoDeContacto]

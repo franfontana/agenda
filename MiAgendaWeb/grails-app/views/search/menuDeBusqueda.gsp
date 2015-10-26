@@ -12,8 +12,8 @@ OPCIONES DE BUSQUEDA:
 <br>
 Indique como desea buscar el contacto:
 <br>
-<g:link controller="search" action="menuDeBusqueda" id=""> Mediante Email </g:link><br>
-<g:link controller="search" action="menuDeBusqueda" id=""> Mediante expresion textual que identifique cualquier atributo del contacto </g:link><br>
+<g:link controller="search" action="buscarContactoPorEmail" id=""> Mediante Email </g:link><br>
+<g:link controller="search" action="busquedaPorExpresion" id=""> Mediante expresion textual que identifique cualquier atributo del contacto </g:link><br>
   </div>
   <br><br>
   <g:link controller="home" action="index" id=""> Volver al Menu Principal </g:link><br>

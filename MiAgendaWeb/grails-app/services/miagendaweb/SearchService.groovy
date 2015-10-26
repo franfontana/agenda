@@ -1,14 +1,13 @@
 package miagendaweb
 
-class SearchService {
+class SearchService extends Agenda {
 
 	static transactional = true;
-	Agenda agendaEnSearchService = new Agenda();
 	
 	def Contacto buscarUnContacto(String email) {
 		
 			Contacto contactoEncontrado = null;
-			for(Contacto c : agendaEnSearchService.listaDeContactos){
+			for(Contacto c : listaDeContactos){
 				if(c.getEmail().equals(email)) contactoEncontrado = c; else contactoEncontrado = null;
 			}
 			return contactoEncontrado;

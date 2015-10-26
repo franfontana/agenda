@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Agenda {
 
-	ArrayList<Contacto> listaDeContactos= new ArrayList<Contacto>();
-	int contador = 0;
+	protected ArrayList<Contacto> listaDeContactos= new ArrayList<Contacto>();
+	protected int contador = 0;
 	
 	public Agenda() {
 
