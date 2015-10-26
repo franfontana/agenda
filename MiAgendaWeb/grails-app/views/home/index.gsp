@@ -16,7 +16,7 @@ MENU DE OPCIONES:
 Elija la opcion a realizar:
 <br>
 <g:link controller="create" action="agregarContacto" id=""> Nuevo Contacto </g:link><br>
-<g:link controller="create" action="index" id=""> Buscar Contacto </g:link><br>
+<g:link controller="search" action="menuDeBusqueda" id=""> Buscar Contacto </g:link><br>
 <g:link controller="create" action="index" id=""> Modificar Contacto </g:link><br>
 <g:link controller="create" action="index" id=""> Eliminar Contacto </g:link><br>
 <g:link controller="create" action="index" id=""> Listado de Contactos </g:link><br>
