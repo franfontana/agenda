@@ -1,17 +1,18 @@
 package miagendaweb
 
-class CreateService extends Agenda {
+class CreateService {
 
     static transactional = true;
 	SearchService searchServiceEnCreateService = new SearchService();
+	DataService dataServiceEnCreateService = new DataService();
 
     def boolean agregarContacto(String nombre, String apellido, String email, String movil) {
 		boolean retorno;
 		if(searchServiceEnCreateService.buscarUnContacto(email) == null){
 			Contacto unContacto1 = new Contacto(nombre, apellido, email, movil);
-			if(listaDeContactos.add(unContacto1)){
+			if(dataServiceEnCreateService.listaDeContactos.add(unContacto1)){
 				retorno = true;
-				contador = contador+1;
+				dataServiceEnCreateService.contador = dataServiceEnCreateService.contador+1;
 			}else retorno = false;
 		}else retorno = false;
 		return retorno;

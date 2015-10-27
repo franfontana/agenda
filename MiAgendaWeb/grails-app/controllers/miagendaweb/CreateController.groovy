@@ -4,7 +4,8 @@ class CreateController {
 	
 	CreateService createServiceEnCreateController = new CreateService();
 	ValidationService validationServiceEnCreateController = new ValidationService();
-	Agenda agendaEnCreateController = new Agenda();
+	DataService dataServiceEnCreateController = new DataService();
+//	Agenda agendaEnCreateController = new Agenda();
 	String informeIngresoDeContacto = new String();
 	String infoNombre;
 	String infoApellido;
@@ -26,10 +27,12 @@ class CreateController {
 					infoApellido = "Apellido:";
 					infoEmail = "Email:";
 					infoMovil = "Movil:";
-					[Nombre:createServiceEnCreateController.listaDeContactos[agendaEnCreateController.contador].getNombre(), Apellido:createServiceEnCreateController.listaDeContactos[agendaEnCreateController.contador].getApellido(), Email:createServiceEnCreateController.listaDeContactos[agendaEnCreateController.contador].getEmail(), Movil:createServiceEnCreateController.listaDeContactos[agendaEnCreateController.contador].getMovil(), informeIngresoDeContacto:informeIngresoDeContacto, infoNombre:infoNombre, infoApellido:infoApellido, infoEmail:infoEmail, infoMovil:infoMovil]
+					[Nombre:createServiceEnCreateController.dataServiceEnCreateService.listaDeContactos[dataServiceEnCreateController.contador].getNombre(), Apellido:createServiceEnCreateController.dataServiceEnCreateService.listaDeContactos[dataServiceEnCreateController.contador].getApellido(), Email:createServiceEnCreateController.dataServiceEnCreateService.listaDeContactos[dataServiceEnCreateController.contador].getEmail(), Movil:createServiceEnCreateController.dataServiceEnCreateService.listaDeContactos[dataServiceEnCreateController.contador].getMovil(), informeIngresoDeContacto:informeIngresoDeContacto, infoNombre:infoNombre, infoApellido:infoApellido, infoEmail:infoEmail, infoMovil:infoMovil]
 			}else{
 				informeIngresoDeContacto = "Los datos no se ingresaron correctamente, por favor reingrese los atributos del contacto.";
 				[informeIngresoDeContacto:informeIngresoDeContacto]
 			}
 	}
 }
+//[Nombre:createServiceEnCreateController.agendaEnCreateService.listaDeContactos[agendaEnCreateController.contador].getNombre(), en GIT
+//dataServiceEnCreateController.listaDeContactos[createServiceEnCreateController.dataServiceEnCreateService.contador].getNombre(), LOCAL ANTES

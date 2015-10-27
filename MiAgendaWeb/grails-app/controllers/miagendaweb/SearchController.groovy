@@ -4,7 +4,7 @@ class SearchController {
 	
 	SearchService searchServiceEnSearchController = new SearchService();
 	ValidationService validationServiceEnSearchController = new ValidationService();
-	Agenda agendaEnSearchController = new Agenda();
+//	Agenda agendaEnSearchController = new Agenda();
 	Contacto contactoEnSearchController = new Contacto();
 	String informeBusquedaDeContacto = new String();
 	String infoNombre;
