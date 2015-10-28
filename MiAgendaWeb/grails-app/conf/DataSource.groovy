@@ -6,6 +6,7 @@ dataSource {
 }
 hibernate {
     cache.use_second_level_cache = true
+//	cache.use_second_level_cache = false
     cache.use_query_cache = true
     cache.provider_class = 'net.sf.ehcache.hibernate.EhCacheProvider'
 }
@@ -13,7 +14,8 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+//            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+			dbCreate = "create-drop" // one of 'create', 'create-drop','update'
             url = "jdbc:hsqldb:mem:devDB"
         }
     }

@@ -3,12 +3,12 @@ package miagendaweb
 class SearchService {
 
 	static transactional = true;
-	DataService dataServiceEnSearchService = new DataService();
+	DataService dataService;
 	
 	def Contacto buscarUnContacto(String email) {
 		
 			Contacto contactoEncontrado = null;
-			for(Contacto c : dataServiceEnSearchService.listaDeContactos){
+			for(Contacto c : dataService.listaDeContactos){
 				if(c.getEmail().equals(email)) contactoEncontrado = c; else contactoEncontrado = null;
 			}
 			return contactoEncontrado;

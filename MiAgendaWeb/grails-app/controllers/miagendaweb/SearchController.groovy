@@ -2,9 +2,8 @@ package miagendaweb
 
 class SearchController {
 	
-	SearchService searchServiceEnSearchController = new SearchService();
-	ValidationService validationServiceEnSearchController = new ValidationService();
-//	Agenda agendaEnSearchController = new Agenda();
+	SearchService searchService;
+	ValidationService validationService;
 	Contacto contactoEnSearchController = new Contacto();
 	String informeBusquedaDeContacto = new String();
 	String infoNombre;
@@ -20,8 +19,8 @@ class SearchController {
 	
 	def buscarContactoPorEmailConResultado = {
 		
-	if(validationServiceEnSearchController.validarEmail(params.Email)){
-		contactoEnSearchController = searchServiceEnSearchController.buscarUnContacto(params.Email);
+	if(validationService.validarEmail(params.Email)){
+		contactoEnSearchController = searchService.buscarUnContacto(params.Email);
 		if(!contactoEnSearchController.equals(null)){	
 			informeBusquedaDeContacto = "Contacto encontrado:";
 			infoNombre = "Nombre:";
