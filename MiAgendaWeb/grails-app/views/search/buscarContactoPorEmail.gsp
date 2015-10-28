@@ -17,6 +17,7 @@
   <br>
   ${infoNombre} ${Nombre} <br> ${infoApellido} ${Apellido} <br> ${infoEmail} ${Email} <br> ${infoMovil} ${Movil}
   </div>
+  <br><br>
   <g:link controller="search" action="menuDeBusqueda" id=""> Volver al Menu de Busqueda </g:link><br>
 </body>
 </html>
