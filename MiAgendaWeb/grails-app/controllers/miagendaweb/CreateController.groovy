@@ -5,7 +5,6 @@ class CreateController {
 	CreateService createService;
 	ValidationService validationService;
 	DataService dataService;
-//	int tamanioDeLista = dataService.listaDeContactos.size();
 	String informeIngresoDeContacto = new String();
 	String infoNombre;
 	String infoApellido;
@@ -21,13 +20,17 @@ class CreateController {
 	def agregarContactoConResultado = {
 		
 			if(validationService.validarNombre(params.Nombre) && validationService.validarApellido(params.Apellido) && validationService.validarEmail(params.Email) && validationService.validarTelMovil(params.Movil)){
-					createService.agregarContacto(params.Nombre, params.Apellido, params.Email, params.Movil);
+					if(createService.agregarContacto(params.Nombre, params.Apellido, params.Email, params.Movil)){
 					informeIngresoDeContacto = "Se ha agregado el siguiente contacto a la agenda:";
 					infoNombre = "Nombre:";
 					infoApellido = "Apellido:";
 					infoEmail = "Email:";
 					infoMovil = "Movil:";
 					[Nombre:dataService.listaDeContactos[dataService.contador-1].getNombre(), Apellido:dataService.listaDeContactos[dataService.contador-1].getApellido(), Email:dataService.listaDeContactos[dataService.contador-1].getEmail(), Movil:dataService.listaDeContactos[dataService.contador-1].getMovil(), informeIngresoDeContacto:informeIngresoDeContacto, infoNombre:infoNombre, infoApellido:infoApellido, infoEmail:infoEmail, infoMovil:infoMovil]
+					}else{
+						informeIngresoDeContacto = "NO se ha insertado el contacto en la agenda.\nEl contacto existe en la agenda y no es posible duplicarlo.";
+						[informeIngresoDeContacto:informeIngresoDeContacto]
+					}
 			}else{
 				informeIngresoDeContacto = "Los datos no se ingresaron correctamente, por favor reingrese los atributos del contacto.";
 				[informeIngresoDeContacto:informeIngresoDeContacto]

@@ -9,7 +9,8 @@ class SearchService {
 		
 			Contacto contactoEncontrado = null;
 			for(Contacto c : dataService.listaDeContactos){
-				if(c.getEmail().equals(email)) contactoEncontrado = c; else contactoEncontrado = null;
+				if(c.getEmail().equals(email)) contactoEncontrado = c;
+//				else contactoEncontrado = null;
 			}
 			return contactoEncontrado;
 	}

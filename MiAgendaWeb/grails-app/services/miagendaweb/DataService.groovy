@@ -13,11 +13,6 @@ class DataService {
 	def public Agenda(ArrayList<Contacto> lista) {
 		this.listaDeContactos = lista;
 	}
-
-    
-//    def addContact(Contacto nuevoContacto) {
-//		listaDeContactos.add(nuevoContacto);
-//    }
 	
 	def public incrementoContador() {
 		contador = contador+1;
