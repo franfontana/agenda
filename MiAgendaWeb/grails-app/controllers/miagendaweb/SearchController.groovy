@@ -39,7 +39,11 @@ class SearchController {
 		
 	}
 	
-	def busquedaPorExpresion = {
+	def busquedaPorExpresion = {}
+	
+	def busquedaPorExpresionConResultado = {
+		
+		[listaEncontradaPorExpresion:searchService.buscarContactosMedianteAlgunAtributo(params.Expresion)]
 		
 	}
 }
