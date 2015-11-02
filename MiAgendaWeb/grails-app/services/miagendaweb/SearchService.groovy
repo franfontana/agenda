@@ -16,7 +16,6 @@ class SearchService {
 	}
 	
 	def ArrayList<Contacto> buscarContactosMedianteAlgunAtributo(String busqueda){
-		String mostrarBusqueda = "";
 		ArrayList<Contacto> listaEncontradaPorExpresion = new ArrayList<Contacto>();
 		for(Contacto c : dataService.listaDeContactos) {
 			if((c.getNombre().equals(busqueda)) || (c.getNombre().equals(c.getApellido())) && !(c.getEmail().equals(busqueda)) && !(c.getMovil().equals(busqueda))) {

@@ -55,4 +55,9 @@ class ValidationService {
 //			return false;
 //		}
 //	}
+	
+	def boolean validateDeleteAllContacts(String afirmacion) {
+			boolean retorno;
+			if(afirmacion.equals("S")) retorno = true; else retorno = false;
+		}
 }
