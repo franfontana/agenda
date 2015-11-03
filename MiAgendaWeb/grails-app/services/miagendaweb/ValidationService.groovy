@@ -60,4 +60,9 @@ class ValidationService {
 			boolean retorno;
 			if(afirmacion.equals("S")) retorno = true; else retorno = false;
 		}
+	
+	def boolean validateDeleteContact(String afirmacion) {
+		boolean retorno;
+		if(afirmacion.equals("S")) retorno = true; else retorno = false;
+	}
 }
