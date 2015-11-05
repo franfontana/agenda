@@ -17,7 +17,7 @@ Elija la opcion a realizar:
 <br>
 <g:link controller="create" action="agregarContacto" id=""> Nuevo Contacto </g:link><br>
 <g:link controller="search" action="menuDeBusqueda" id=""> Buscar Contacto </g:link><br>
-<g:link controller="create" action="index" id=""> Modificar Contacto </g:link><br>
+<g:link controller="modify" action="modificarContacto" id=""> Modificar Contacto </g:link><br>
 <g:link controller="delete" action="eliminarContacto" id=""> Eliminar Contacto </g:link><br>
 <g:link controller="list" action="mostrarTodosLosContactos" id=""> Listado de Contactos </g:link><br>
 <g:link controller="delete" action="eliminarTodosLosContactos" id=""> Eliminar TODOS los contactos de la Agenda </g:link><br>
