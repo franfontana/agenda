@@ -7,10 +7,8 @@ class DataService {
 	
 	public ArrayList<Contacto> listaDeContactos = new ArrayList<Contacto>();
 	public int contador;
-	
-	def public Agenda() {}
 
-	def public Agenda(ArrayList<Contacto> lista) {
+	def public DataService(ArrayList<Contacto> lista) {
 		this.listaDeContactos = lista;
 	}
 	
