@@ -34,6 +34,12 @@ class DeleteServiceTests extends GrailsUnitTestCase {
     }
 	
 	void testEliminarTodosLosContactos(){
-		
+		deleteService = new DeleteService();
+		deleteService.dataService = new DataService();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		deleteService.dataService.listaDeContactos.add(contacto);
+		assertEquals(1, deleteService.dataService.listaDeContactos.size());
+		assertTrue(deleteService.eliminarTodosLosContactos());
+		assertEquals(0, deleteService.dataService.listaDeContactos.size());
 	}
 }
