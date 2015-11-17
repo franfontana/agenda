@@ -12,7 +12,7 @@ class CreateService {
 			Contacto unContacto1 = new Contacto(nombre, apellido, email, movil);
 			if(dataService.listaDeContactos.add(unContacto1)){
 				retorno = true;
-//				dataService.incrementoContador();
+				dataService.incrementoContador();
 			}else retorno = false;
 		}else retorno = false;
 		return retorno;
