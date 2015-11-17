@@ -1,7 +1,7 @@
 /bin/
 *.settings
 *cobertura.ser
-*target-eclipse
+*target-eclipse*
 *.classpath
 *.proyect
 *target
