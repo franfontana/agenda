@@ -28,4 +28,12 @@ class SearchServiceTests extends GrailsUnitTestCase {
 		searchService.dataService.listaDeContactos.add(contacto);		
 		assertEquals(null, searchService.buscarUnContacto(atributoTest));
 	}
+	
+	public void testBusquedaContactoExistente(){
+		searchService = new SearchService();
+		searchService.dataService = new DataService();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		searchService.dataService.listaDeContactos.add(contacto);
+		assertEquals(contacto, searchService.buscarUnContacto(emailTest));
+	}
 }
