@@ -1,6 +1,7 @@
 package miagendaweb
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import grails.test.*
 import static java.util.UUID.randomUUID;
 
@@ -29,11 +30,21 @@ class SearchServiceTests extends GrailsUnitTestCase {
 		assertEquals(null, searchService.buscarUnContacto(atributoTest));
 	}
 	
-	public void testBusquedaContactoExistente(){
+	void testBusquedaContactoExistente(){
 		searchService = new SearchService();
 		searchService.dataService = new DataService();
 		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
 		searchService.dataService.listaDeContactos.add(contacto);
 		assertEquals(contacto, searchService.buscarUnContacto(emailTest));
+	}
+	
+	void testBusquedaDeContactosExistentesPorNombre(){
+		searchService = new SearchService();
+		searchService.dataService = new DataService();
+		String atributoTest = nombreTest;
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		searchService.dataService.listaDeContactos.add(contacto);
+		String contactosEncontrados = searchService.buscarContactosMedianteAlgunAtributo(atributoTest);
+		assertTrue(contactosEncontrados.length()>0);
 	}
 }
