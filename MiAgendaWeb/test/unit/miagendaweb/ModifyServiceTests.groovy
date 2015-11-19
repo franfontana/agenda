@@ -63,4 +63,16 @@ class ModifyServiceTests extends GrailsUnitTestCase {
 		assertTrue(modifyService.modificarContacto(emailDeContactoAModificar, atributoAModificar, nuevoValorDeAtributo));
 		assertEquals(contacto.getNombre(), nuevoValorDeAtributo);
 	}
+	
+	void testModificaAtributosDeContacto_Apellido(){
+		modifyService = new ModifyService();
+		modifyService.searchService = new SearchService();
+		Contacto contacto = new Contacto(nombreTest, apellidoTest, emailTest, movilTest);
+		String emailDeContactoAModificar = emailTest;
+		String atributoAModificar = "Apellido";
+		String nuevoValorDeAtributo = randomUUID() as String;
+		modifyService.searchService.metaClass {buscarUnContacto() {String email -> return contacto}};
+		assertTrue(modifyService.modificarContacto(emailDeContactoAModificar, atributoAModificar, nuevoValorDeAtributo));
+		assertEquals(contacto.getApellido(), nuevoValorDeAtributo);
+	}
 }
