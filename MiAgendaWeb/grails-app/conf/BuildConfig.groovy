@@ -14,7 +14,7 @@ grails.project.dependency.resolution = {
         grailsHome()
         grailsCentral()
 		
-		jcenter()	//Mockito
+		//jcenter()	//Mockito
 
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
