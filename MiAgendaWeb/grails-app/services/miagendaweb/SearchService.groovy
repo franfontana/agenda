@@ -17,18 +17,21 @@ class SearchService {
 	
 	def ArrayList<Contacto> buscarContactosMedianteAlgunAtributo(String busqueda){
 		ArrayList<Contacto> listaEncontradaPorExpresion = new ArrayList<Contacto>();
-		for(Contacto c : dataService.listaDeContactos) {
-			if((c.getNombre().equals(busqueda)) || (c.getNombre().equals(c.getApellido())) && !(c.getEmail().equals(busqueda)) && !(c.getMovil().equals(busqueda))) {
-				listaEncontradaPorExpresion.add(c);
-			}
-			if((c.getApellido().equals(busqueda)) && (!c.getApellido().equals(c.getNombre()))) {
-				listaEncontradaPorExpresion.add(c);
-			}
-			if(c.getEmail().equals(busqueda)) {
-				listaEncontradaPorExpresion.add(c);
-			}
-			if(c.getMovil().equals(busqueda)) {
-				listaEncontradaPorExpresion.add(c);
+		//	Se agrega condicion para evaluar si la expresion de busqueda es null
+		if(busqueda != null){
+			for(Contacto c : dataService.listaDeContactos) {
+				if((c.getNombre().equals(busqueda)) || (c.getNombre().equals(c.getApellido())) && !(c.getEmail().equals(busqueda)) && !(c.getMovil().equals(busqueda))) {
+					listaEncontradaPorExpresion.add(c);
+				}
+				if((c.getApellido().equals(busqueda)) && (!c.getApellido().equals(c.getNombre()))) {
+					listaEncontradaPorExpresion.add(c);
+				}
+				if(c.getEmail().equals(busqueda)) {
+					listaEncontradaPorExpresion.add(c);
+				}
+				if(c.getMovil().equals(busqueda)) {
+					listaEncontradaPorExpresion.add(c);
+				}
 			}
 		}
 		return listaEncontradaPorExpresion;
