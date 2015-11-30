@@ -5,16 +5,19 @@ class DataService {
 	
 	static transactional = true;
 	
-	public ArrayList<Contacto> listaDeContactos = new ArrayList<Contacto>();
+	public ArrayList<Contacto> listaDeContactos;
+
 	public int contador;
 	
-	def public Agenda() {}
-
-	def public Agenda(ArrayList<Contacto> lista) {
-		this.listaDeContactos = lista;
-	}
-	
-	def public incrementoContador() {
+	def incrementoContador() {
 		contador = contador+1;
+	}
+
+	public DataService() {
+		listaDeContactos = new ArrayList<Contacto>();
+	}
+
+	public DataService(ArrayList<Contacto> lista) {
+		listaDeContactos = lista;
 	}
 }

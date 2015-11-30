@@ -1,1 +1,12 @@
 /bin/
+*.settings
+*cobertura.ser
+*/target-eclipse/*
+*.classpath
+*.proyect
+*target
+*.~
+*.idea/*
+*.iml
+*.ser
+*out
