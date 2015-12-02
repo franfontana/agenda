@@ -43,10 +43,16 @@ class UrlMappings {
 		
 		
 		
+		"/searchcontactforemail" (controller:"search", parseRequest:true){
+			action = [GET:"searchContactForEmailForCURL"]					//Parametro "Email"
+		}
 		
-//		"/createContact" (service:"create", parseRequest){
-//			action = [POST:"agregarContacto"]
-//		}
+		"/createcontact" (controller:"create", parseRequest:true){
+			action = [POST:"createContactForCURL"]
+		}
+		
+		
+		
 		
 		"/$controller/$action?/$id?"{
 			constraints {

@@ -1,5 +1,7 @@
 package miagendaweb
 
+import grails.converters.JSON
+
 class SearchController {
 	
 	SearchService searchService;
@@ -45,5 +47,11 @@ class SearchController {
 		
 		[listaEncontradaPorExpresion:searchService.buscarContactosMedianteAlgunAtributo(params.Expresion)]
 		
+	}
+	
+	def searchContactForEmailForCURL = {
+		contactoEnSearchController = searchService.buscarUnContacto(params.Email)
+//		return contactoEnSearchController as JSON
+		[contactoEnSearchController:contactoEnSearchController as JSON]
 	}
 }

@@ -1,5 +1,7 @@
 package miagendaweb
 
+import grails.converters.JSON
+
 class CreateController {
 	
 	CreateService createService;
@@ -36,7 +38,12 @@ class CreateController {
 				[informeIngresoDeContacto:informeIngresoDeContacto]
 			}
 	}
+	
+	def createContactForCURL = {
+		createService.agregarContacto(params.Nombre, params.Apellido, params.Email, params.Movil)
+	}
 }
+//return createService as JSON
 //[Nombre:createServiceEnCreateController.agendaEnCreateService.listaDeContactos[agendaEnCreateController.contador].getNombre(), en GIT
 //dataServiceEnCreateController.listaDeContactos[createServiceEnCreateController.dataServiceEnCreateService.contador].getNombre(), LOCAL ANTES
 //OK [Nombre:createServiceEnCreateController.dataServiceEnCreateService.listaDeContactos[dataServiceEnCreateController.contador].getNombre(), Apellido:createServiceEnCreateController.dataServiceEnCreateService.listaDeContactos[dataServiceEnCreateController.contador].getApellido(), Email:createServiceEnCreateController.dataServiceEnCreateService.listaDeContactos[dataServiceEnCreateController.contador].getEmail(), Movil:createServiceEnCreateController.dataServiceEnCreateService.listaDeContactos[dataServiceEnCreateController.contador].getMovil(), informeIngresoDeContacto:informeIngresoDeContacto, infoNombre:infoNombre, infoApellido:infoApellido, infoEmail:infoEmail, infoMovil:infoMovil]
