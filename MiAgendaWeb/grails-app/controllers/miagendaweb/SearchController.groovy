@@ -43,15 +43,17 @@ class SearchController {
 	
 	def busquedaPorExpresion = {}
 	
-	def busquedaPorExpresionConResultado = {
-		
-		[listaEncontradaPorExpresion:searchService.buscarContactosMedianteAlgunAtributo(params.Expresion)]
-		
+	def busquedaPorExpresionConResultado = {		
+		[listaEncontradaPorExpresion:searchService.buscarContactosMedianteAlgunAtributo(params.Expresion)]		
 	}
 	
-	def searchContactForEmailForCURL = {
-		contactoEnSearchController = searchService.buscarUnContacto(params.Email)
-//		return contactoEnSearchController as JSON
-		[contactoEnSearchController:contactoEnSearchController as JSON]
+	def searchContactForEmail = {
+		if(validationService.validarEmail(params.Email)){
+			[contactoEnSearchController:searchService.buscarUnContacto(params.Email) as JSON]
+		}
+	}
+	
+	def searchContactForExpresion = {
+		[listaEncontradaPorExpresion:searchService.buscarContactosMedianteAlgunAtributo(params.Expresion) as JSON]
 	}
 }

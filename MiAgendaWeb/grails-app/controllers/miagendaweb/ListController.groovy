@@ -1,5 +1,7 @@
 package miagendaweb
 
+import grails.converters.JSON
+
 class ListController {
 	
 	DataService dataService;
@@ -14,6 +16,12 @@ class ListController {
 		}else{
 			informeNoHayContactos = "No existen contactos en la agenda.";
 			[informeNoHayContactos:informeNoHayContactos]
+		}
+	}
+	
+	def listContacts = {
+		if(dataService.listaDeContactos.size() > 0){
+			[listarContactos:dataService.listaDeContactos as JSON]
 		}
 	}
 }

@@ -61,4 +61,16 @@ class DeleteController {
 				
 		[InformeEliminacionDeContactos:informeEliminacionDeContactos, ListaDeContactos:dataService.listaDeContactos]
 	}
+	
+	def deleteAllContacts = {
+		if(validationService.validateDeleteAllContacts(params.Afirmacion)){
+			deleteService.eliminarTodosLosContactos();
+		}
+	}
+	
+	def deleteContactForEmail = {
+		if(validationService.validateDeleteContact(params.Afirmacion)){
+			deleteService.eliminarContacto(email);
+		}
+	}
 }

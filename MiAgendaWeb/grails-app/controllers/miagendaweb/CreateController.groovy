@@ -39,8 +39,10 @@ class CreateController {
 			}
 	}
 	
-	def createContactForCURL = {
-		createService.agregarContacto(params.Nombre, params.Apellido, params.Email, params.Movil)
+	def createContact = {
+		if(validationService.validarNombre(params.Nombre) && validationService.validarApellido(params.Apellido) && validationService.validarEmail(params.Email) && validationService.validarTelMovil(params.Movil)){
+			createService.agregarContacto(params.Nombre, params.Apellido, params.Email, params.Movil)
+		}
 	}
 }
 //return createService as JSON

@@ -92,4 +92,19 @@ class ModifyController {
 			[Informe:informeContactoModificado]
 		}
 	}
+	
+	def modifyContact = {
+		if(params.Atributo == "Nombre" && validationService.validarNombre(params.Valor)){
+			modifyService.modificarContacto(params.Email, params.Atributo, params.Valor)
+		}
+		if(params.Atributo == "Apellido" && validationService.validarApellido(params.Valor)){
+			modifyService.modificarContacto(params.Email, params.Atributo, params.Valor)
+		}
+		if(params.Atributo == "Email" && validationService.validarEmail(params.Valor)){
+			modifyService.modificarContacto(params.Email, params.Atributo, params.Valor)
+		}
+		if(params.Atributo == "Movil" && validationService.validarTelMovil(params.Valor)){
+			modifyService.modificarContacto(params.Email, params.Atributo, params.Valor)
+		}
+	}
 }

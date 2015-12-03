@@ -41,17 +41,33 @@ class UrlMappings {
 		
 		
 		
+		"/listcontacts" (controller:"list", parseRequest:true){
+			action = [GET:"listContacts"]									//Sin Parametro
+		}
 		
+		"/searchcontactforexpresion" (controller:"search", parseRequest:true){
+			action = [GET:"searchContactForExpresion"]						//Parametro "Expresion"
+		}
 		
 		"/searchcontactforemail" (controller:"search", parseRequest:true){
-			action = [GET:"searchContactForEmailForCURL"]					//Parametro "Email"
+			action = [GET:"searchContactForEmail"]							//Parametro "Email"
 		}
 		
 		"/createcontact" (controller:"create", parseRequest:true){
-			action = [POST:"createContactForCURL"]
+			action = [POST:"createContact"]									//Parametro "Nombre""Apellido""Email""Movil"
 		}
 		
+		"/modifycontact" (controller:"modify", parseRequest:true){
+			action = [PUT:"modifyContact"]									//Parametro "Email""Atributo""Valor"
+		}
 		
+		"/deleteallcontacts" (controller:"delete", parseRequest:true){
+			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
+		}
+		
+		"/deletecontactforemail" (controller: "delete", parseRequest:true){
+			action = [DELETE:"deleteContactForEmail"]						//Parametro "Afirmacion""Email"
+		}
 		
 		
 		"/$controller/$action?/$id?"{
