@@ -29,9 +29,9 @@ class UrlMappings {
 		
 		
 		
-		"/listcontacts" (controller:"list", parseRequest:true){
-			action = [GET:"listContacts"]									//Sin Parametro
-		}
+//		"/listcontacts" (controller:"list", parseRequest:true){
+//			action = [GET:"listContacts"]									//Sin Parametro
+//		}
 		
 		"/searchcontactforexpresion" (controller:"search", parseRequest:true){
 			action = [GET:"searchContactForExpresion"]						//Parametro "Expresion"
@@ -49,13 +49,23 @@ class UrlMappings {
 			action = [PUT:"modifyContact"]									//Parametro "Email""Atributo""Valor"
 		}
 		
-		"/deleteallcontacts" (controller:"delete", parseRequest:true){
-			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
-		}
+//		"/deleteallcontacts" (controller:"delete", parseRequest:true){
+//			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
+//		}
 		
 		"/deletecontactforemail" (controller: "delete", parseRequest:true){
 			action = [DELETE:"deleteContactForEmail"]						//Parametro "Afirmacion""Email"
 		}
+		
+		
+		
+		
+		
+		"/contacts" (controller: "contacts", parseRequest:true){
+			action = [GET:"listContacts", DELETE:"deleteAllContacts"]
+		}
+		
+		
 		
 		
 		"/$controller/$action?/$id?"{

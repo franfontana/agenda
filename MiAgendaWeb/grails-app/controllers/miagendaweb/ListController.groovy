@@ -19,9 +19,9 @@ class ListController {
 		}
 	}
 	
-	def listContacts = {
-		if(dataService.listaDeContactos.size() > 0){
-			[listarContactos:dataService.listaDeContactos as JSON]
-		}
-	}
+//	def listContacts = {
+//		if(dataService.listaDeContactos.size() > 0){
+//			[listarContactos:dataService.listaDeContactos as JSON]
+//		}
+//	}
 }
