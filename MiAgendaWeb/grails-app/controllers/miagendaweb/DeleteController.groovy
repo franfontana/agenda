@@ -68,9 +68,9 @@ class DeleteController {
 //		}
 //	}
 	
-	def deleteContactForEmail = {
-		if(validationService.validateDeleteContact(params.Afirmacion)){
-			deleteService.eliminarContacto(email);
-		}
-	}
+//	def deleteContactForEmail = {
+//		if(validationService.validateDeleteContact(params.Afirmacion)){
+//			deleteService.eliminarContacto(email);
+//		}
+//	}
 }

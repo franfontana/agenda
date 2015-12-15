@@ -7,6 +7,7 @@ class ContactsController {
 	DataService dataService;
 	ValidationService validationService;
 	DeleteService deleteService;
+	SearchService searchService;
 
 //    def index = { }
 	
@@ -21,5 +22,4 @@ class ContactsController {
 			deleteService.eliminarTodosLosContactos();
 		}
 	}
-	
 }
