@@ -2,10 +2,6 @@ class UrlMappings {
 
 	static mappings = {
 		
-//		"/list" (controller:"list", parseRequest:true){
-//			action = [GET:"mostrarTodosLosContactos", PUT:"update", DELETE:"delete", POST:"save"]	//Sin Parametro
-//		}
-		
 		"/list" (controller:"list", parseRequest:true){
 			action = [GET:"mostrarTodosLosContactos"]	//Sin Parametro
 		}
@@ -21,14 +17,6 @@ class UrlMappings {
 		"/create" (controller:"create", parseRequest:true){
 			action = [POST:"agregarContactoConResultado"]			//Parametro "Nombre""Apellido""Email""Movil"
 		}
-		
-//		"/modify" (controller:"modify", parseRequest:true){
-//			action = [PUT:"modificarNombreConResultado"]			//Parametro "Nombre"
-//		}
-		
-//		"/modify" (controller:"modify", parseRequest:true){
-//			action = [PUT:"modificarContactoConInforme"]			//Parametro "Email"
-//		}
 		
 		"/deleteall" (controller:"delete", parseRequest:true){
 			action = [DELETE:"eliminarTodosLosContactosOK"]			//Parametro "Afirmacion"
