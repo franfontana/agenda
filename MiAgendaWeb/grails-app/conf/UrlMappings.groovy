@@ -112,5 +112,6 @@ class UrlMappings {
 
 		"/"(view:"/home/index")
 		"500"(view:'/error')
+		"/api"(view:"/home/api")
 	}
 }
