@@ -61,33 +61,46 @@ class UrlMappings {
 		
 		
 		
-		"/contacts" (controller: "contacts", parseRequest:true){
+		"/api/contacts" (controller: "contacts", parseRequest:true){
 			action = [GET:"listContacts"]
 		}
 		
-		"/contacts/$Afirmacion" (controller: "contacts", parseRequest:true){
+		"/api/contacts/$Afirmacion" (controller: "contacts", parseRequest:true){
 			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
 		}
 		
-		"/contact/$Email" (controller: "contact", parseRequest:true){
+		"/api/contact/$Email" (controller: "contact", parseRequest:true){
 			action = [GET:"searchContactForEmail"]							//Parametro "Email"
 		}
 		
-		"/contact/$Expresion" (controller: "contact", parseRequest:true){
+		"/api/contact/$Expresion" (controller: "contact", parseRequest:true){
 			action = [GET:"searchContactForExpresion"]						//Parametro "Expresion"
 		}
 		
-		"/contact/$Email/$Afirmacion" (controller: "contact", parseRequest:true){
+		"/api/contact/$Email/$Afirmacion" (controller: "contact", parseRequest:true){
 			action = [DELETE:"deleteContactForEmail"]						//Parametro "Afirmacion""Email"
 		}
 		
-		"/contact/$Nombre/$Apellido/$Email/$Movil" (controller: "contact", parseRequest:true){
+		"/api/contact/$Nombre/$Apellido/$Email/$Movil" (controller: "contact", parseRequest:true){
 			action = [POST:"createContact"]									//Parametro "Nombre""Apellido""Email""Movil"
 		}
 		
-		"/contact/$Email/$Atributo/$Valor" (controller: "contact", parseRequest:true){
+		"/api/contact/$Email/$Atributo/$Valor" (controller: "contact", parseRequest:true){
 			action = [PUT:"modifyContact"]									//Parametro "Email""Atributo""Valor"
 		}
+		
+		
+		
+		
+		"/api/contact" (controller: "contact", parseRequest:true){
+			action = [GET:"searchContactForEmail", POST:"createContact", PUT:"modifyContact", DELETE:"deleteContactForEmail"]									//Parametro "Email""Atributo""Valor"
+		}
+		
+		"/api/contacts" (controller: "contacts", parseRequest:true){
+			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
+		}
+		
+		
 		
 		
 		
