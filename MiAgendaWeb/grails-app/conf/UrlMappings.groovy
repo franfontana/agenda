@@ -61,9 +61,9 @@ class UrlMappings {
 		
 		
 		
-		"/api/contacts" (controller: "contacts", parseRequest:true){
-			action = [GET:"listContacts"]
-		}
+//		"/api/contacts" (controller: "contacts", parseRequest:true){
+//			action = [GET:"listContacts"]
+//		}
 		
 		"/api/contacts/$Afirmacion" (controller: "contacts", parseRequest:true){
 			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
@@ -97,7 +97,7 @@ class UrlMappings {
 		}
 		
 		"/api/contacts" (controller: "contacts", parseRequest:true){
-			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
+			action = [GET:"listContacts", DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
 		}
 		
 		
