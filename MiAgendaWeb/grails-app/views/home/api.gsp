@@ -15,17 +15,39 @@ OPCIONES:
 <br>
 <br>
 <form action="contact" method="post">
-	  Nombre:	<input type="text" name="Nombre" /><br><br>
-	  Apellido:	<input type="text" name="Apellido" /><br><br>
-	  Email:	<input type="text" name="Email" /><br><br>
-	  Movil:	<input type="text" name="Movil" /><br><br>
+	  Nombre:	<input type="text" name="Nombre" /><br>
+	  Apellido:	<input type="text" name="Apellido" /><br>
+	  Email:	<input type="text" name="Email" /><br>
+	  Movil:	<input type="text" name="Movil" /><br>
 <input type="submit" value="Create Contact"/>
 </form>
-<g:link controller="contact" action="searchContactForEmail" id=""> Buscar Contacto </g:link><br>
-<g:link controller="contact" action="modifyContact" id=""> Modificar Contacto </g:link><br>
-<g:link controller="contact" action="deleteContactForEmail" id=""> Eliminar Contacto </g:link><br>
-<g:link controller="contacts" action="listContacts" id=""> Listado de Contactos </g:link><br>
-<g:link controller="contacts" action="deleteAllContacts" id=""> Eliminar TODOS los contactos de la Agenda </g:link><br>
+<br>
+<form action="contact" method="get">
+	  Email:	<input type="text" name="Email" /><br>
+<input type="submit" value="Search Contact"/>
+</form>
+<br>
+<form action="contact" method="put">
+	  Email:	<input type="text" name="Email" /><br>
+	  Atributo a modificar (Nombre-Apellido-Email-Movil):	<input type="text" name="Atributo" /><br>
+	  Nuevo Valor:	<input type="text" name="Valor" /><br>
+<input type="submit" value="Modify Contact"/>
+</form>
+<br>
+<form action="contact" method="delete">
+	  Email:	<input type="text" name="Email" /><br>
+<input type="submit" value="Delete Contact"/>
+</form>
+<br>
+<form action="contacts" method="get">
+<input type="submit" value="List Contacts"/>
+</form>
+<br>
+<form action="contacts" method="delete">
+	  Afirmacion:	<input type="text" name="Afirmacion" /><br>
+<input type="submit" value="Delete All Contacts"/>
+</form>
+<br>
   </div>
 </body>
 </html>
