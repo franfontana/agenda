@@ -2,7 +2,7 @@ package miagendaweb
 
 import grails.converters.JSON
 
-class ContactController {
+class ContactsController {
 
 	ValidationService validationService;
 	SearchService searchService;

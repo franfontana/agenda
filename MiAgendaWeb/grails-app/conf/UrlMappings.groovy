@@ -69,30 +69,30 @@ class UrlMappings {
 			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
 		}
 		
-		"/api/contact/$Email" (controller: "contact", parseRequest:true){
+		"/api/contacts/$Email" (controller: "contacts", parseRequest:true){
 			action = [GET:"searchContactForEmail"]							//Parametro "Email"
 		}
 		
-		"/api/contact/$Expresion" (controller: "contact", parseRequest:true){
+		"/api/contacts/$Expresion" (controller: "contacts", parseRequest:true){
 			action = [GET:"searchContactForExpresion"]						//Parametro "Expresion"
 		}
 		
-		"/api/contact/$Email/$Afirmacion" (controller: "contact", parseRequest:true){
+		"/api/contacts/$Email/$Afirmacion" (controller: "contacts", parseRequest:true){
 			action = [DELETE:"deleteContactForEmail"]						//Parametro "Afirmacion""Email"
 		}
 		
-		"/api/contact/$Nombre/$Apellido/$Email/$Movil" (controller: "contact", parseRequest:true){
+		"/api/contacts/$Nombre/$Apellido/$Email/$Movil" (controller: "contacts", parseRequest:true){
 			action = [POST:"createContact"]									//Parametro "Nombre""Apellido""Email""Movil"
 		}
 		
-		"/api/contact/$Email/$Atributo/$Valor" (controller: "contact", parseRequest:true){
+		"/api/contacts/$Email/$Atributo/$Valor" (controller: "contacts", parseRequest:true){
 			action = [PUT:"modifyContact"]									//Parametro "Email""Atributo""Valor"
 		}
 		
 		
 		
 		
-		"/api/contact" (controller: "contact", parseRequest:true){
+		"/api/contacts" (controller: "contacts", parseRequest:true){
 			action = [GET:"searchContactForEmail", POST:"createContact", PUT:"modifyContact", DELETE:"deleteContactForEmail"]									//Parametro "Email""Atributo""Valor"
 		}
 		
