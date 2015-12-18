@@ -14,7 +14,7 @@ OPCIONES:
 <br>
 <br>
 <br>
-<form action="contact" method="post">
+<form action="contacts" method="post">
 	  Nombre:	<input type="text" name="Nombre" /><br>
 	  Apellido:	<input type="text" name="Apellido" /><br>
 	  Email:	<input type="text" name="Email" /><br>
@@ -22,13 +22,13 @@ OPCIONES:
 <input type="submit" value="Create Contact"/>
 </form>
 <br>
-<form action="contact" method="get">
+<form action="contacts" method="get">
 	  Email:	<input type="text" name="Email" /><br>
 <input type="submit" value="Search Contact"/>
 </form>
 <br>
-<%--<form action="contact" method="put">--%>
-<form action="contact" method="post">
+<%--<form action="contacts" method="put">--%>
+<form action="contacts" method="post">
   <input type="hidden" name="_method" value="put" />
 	  Email:	<input type="text" name="Email" /><br>
 	  Atributo a modificar (Nombre-Apellido-Email-Movil):	<input type="text" name="Atributo" /><br>
@@ -36,22 +36,22 @@ OPCIONES:
 <input type="submit" value="Modify Contact"/>
 </form>
 <br>
-<%--<form action="contact" method="delete">--%>
-<form action="contact" method="post">
-  <input type="hidden" name="_method" value="delete" />
-	  Email:	<input type="text" name="Email" /><br>
-	  Afirmacion:	<input type="text" name="Afirmacion" /><br>
-<input type="submit" value="Delete Contact"/>
-</form>
-<br>
-<form action="contacts" method="get">
-<input type="submit" value="List Contacts"/>
-</form>
-<br>
 <%--<form action="contacts" method="delete">--%>
 <form action="contacts" method="post">
   <input type="hidden" name="_method" value="delete" />
-	  Afirmacion:	<input type="text" name="Afirmacion" /><br>
+	  Email:	<input type="text" name="Email" /><br>
+	  Afirmacion (S/N):	<input type="text" name="Afirmacion" /><br>
+<input type="submit" value="Delete Contact"/>
+</form>
+<br>
+<form action="allcontacts" method="get">
+<input type="submit" value="List Contacts"/>
+</form>
+<br>
+<%--<form action="allcontacts" method="delete">--%>
+<form action="allcontacts" method="post">
+  <input type="hidden" name="_method" value="delete" />
+	  Afirmacion (S/N):	<input type="text" name="Afirmacion" /><br>
 <input type="submit" value="Delete All Contacts"/>
 </form>
 <br>

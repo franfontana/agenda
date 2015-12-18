@@ -2,7 +2,7 @@ package miagendaweb
 
 import grails.test.*
 
-class ContactControllerTests extends ControllerUnitTestCase {
+class ContactsControllerTests extends ControllerUnitTestCase {
     protected void setUp() {
         super.setUp()
     }
