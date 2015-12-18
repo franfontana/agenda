@@ -61,7 +61,7 @@ class UrlMappings {
 		
 		
 		
-//		"/api/contacts" (controller: "contacts", parseRequest:true){
+//		"/api/allcontacts" (controller: "allcontacts", parseRequest:true){
 //			action = [GET:"listContacts"]
 //		}
 		
