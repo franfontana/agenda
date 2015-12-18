@@ -65,7 +65,7 @@ class UrlMappings {
 			action = [GET:"listContacts"]
 		}
 		
-		"/api/contacts/$Afirmacion" (controller: "contacts", parseRequest:true){
+		"/api/allcontacts/$Afirmacion" (controller: "allContacts", parseRequest:true){
 			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
 		}
 		
@@ -96,8 +96,13 @@ class UrlMappings {
 			action = [GET:"searchContactForEmail", POST:"createContact", PUT:"modifyContact", DELETE:"deleteContactForEmail"]									//Parametro "Email""Atributo""Valor"
 		}
 		
+<<<<<<< HEAD
 		"/api/contacts" (controller: "contacts", parseRequest:true){
 			action = [DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
+=======
+		"/api/allcontacts" (controller: "allContacts", parseRequest:true){
+			action = [GET:"listContacts", DELETE:"deleteAllContacts"]							//Parametro "Afirmacion"
+>>>>>>> 0deccef... Refactor del nombre de ContactsController a AllContactsController y modificacion de URIs en URLMappings para poder accionar por REST sobre todos los contactos
 		}
 		
 		
