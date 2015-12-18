@@ -3,21 +3,15 @@ package agenda;
 
 public class Contacto {
 
-//Declaro variables
-	public static String nombre;
-	public static String apellido;
-	public static String email;
-	public static String movil;
+	private String nombre, apellido, email, movil;
 
-//Funcion para cuando no se ingresa contacto.
 	public Contacto(){
-		this.nombre=null;
-		this.apellido=null;
-		this.email=null;
-		this.movil=null;
+		nombre="";
+		apellido="";
+		email="";
+		movil="";
 	}
 	
-//Funcion para ingreso de cualquier contacto.
 	public Contacto(String nombre, String apellido, String email, String movil){
 		this.nombre=nombre;
 		this.apellido=apellido;
@@ -25,13 +19,44 @@ public class Contacto {
 		this.movil=movil;
 	}
 
-//Funcion para seteo de Nombre.
-	public void setNombre(String nomb){
-		this.nombre=nomb.toUpperCase();
+	public void setNombre(String nombre){
+		this.nombre=nombre;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	
+	public String getApellido() {
+		return apellido;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	public String getEmail(){
-		return this.email;
+		return email;
+	}
+
+	public void setMovil(String movil) {
+		this.movil = movil;
+	}
+
+	public String getMovil() {
+		return movil;
 	}
 	
+@Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        final Contacto other = (Contacto) obj;
+        return (this.email == other.email) || (this.email != null && this.email.equalsIgnoreCase(other.email));
+    }
+
 }
